@@ -16,7 +16,7 @@ export default function Typing(props) {
     }
 
     function handleKeyDown({keyCode}){
-if(keyCode == 32){
+if(keyCode === 32){
     setCurrInput("")
     setCurrWord(prevState => prevState + 1)
     checkMatch()

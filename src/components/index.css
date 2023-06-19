@@ -1,20 +1,34 @@
 .header{
-    background-color: #f6f6f6;
-    min-height: 50px;
+    background-color: #000000;
+    min-height: 100px;
     display: flex;
-    /* flex-direction: row; */
-    /* align-items: center; */
-    /* justify-content: center; */
+    /* position: absolute; */
     font-size: 100;
     color: rgb(0, 0, 0); 
-    box-shadow: 1px 1px #c9c9c9;
+    margin-left: 36px;
+    /* box-shadow: 1px 1px #c9c9c9;? */
+}
+
+.header--logo{
+    display:flex;
+    color: #557D8D;
+    font-size: 30px;
+    margin-left: 200px;
+    width: auto;
+    height: auto;
+    margin-top: auto;
+    margin-bottom:auto;
 }
 
 .header--title{
     display:flex;
-    color: black;
+    color: #557D8D;
     font-size: 30px;
-    margin-left: 30px;
+    margin-left: 10px;
+    font-weight: 550;
+    margin-top:auto;
+    margin-bottom: auto;
+    font-family: 'Lexend', sans-serif;
 }
 
 .header--nav{
@@ -31,6 +45,34 @@ margin-left: auto;
     margin-right: 30px
     
 }
+
+.footer{
+    background-color: #000000;
+    min-height: 100px;
+    display: flex;
+    position: fixed;
+    font-size: 100;
+    color: white; 
+    padding: 0px 10px 0px 10px;
+    left: 200px;
+    bottom: 0px;
+    width: 100%;
+    
+    /* box-shadow: 1px 1px #c9c9c9;? */
+}
+
+.footer > ul{
+    list-style-type: none;
+    display:flex;
+}
+
+.footer > ul >li{
+    margin-right: 50px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    color: #5d5757
+}
+
 .countdown-timer{
     display: flex;
     flex-direction: row;
@@ -39,7 +81,7 @@ margin-left: auto;
     margin-top: 50px;
     margin-bottom: 50px;
     font-size: 50px;
-    color: rgb(0, 0, 0);
+    color: rgb(252, 246, 246);
 }
 
 .typing--section{
@@ -53,7 +95,7 @@ margin-left: auto;
     margin-left: 50px;
     margin-right: 50px;
     font-size: 20px;
-    color: rgb(0, 0, 0);
+    color: rgb(233, 231, 231);
     box-shadow: 2px 2px 2px 2px #aaaaaa;
 }
 
@@ -86,4 +128,62 @@ margin-left: auto;
     background-color: #eae9e9;
     border: none;
     text-indent: 20px;
+}
+
+.auth{
+    width: 50vw;
+    min-height: 70vh;
+    column-count: 2;
+    column-gap: 10vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10vh;
+    font-family: 'Roboto Mono', monospace;
+    /* font-weight: 100 */
+    /* background-color: red; */
+}
+
+.auth > h4 {
+    color: #EEEEEE
+}
+.register{
+    color: white;
+    padding: 50px;
+}
+
+.login{
+    color: white;
+    padding: 50px;
+}
+
+.register-box{
+    background-color: #171717;
+    width: 240px;
+    height:36px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border:none;
+    text-indent: 10px;
+    font-size: 15px;
+    color: white;
+}
+
+.register-box::placeholder{
+    color:#444444;
+}
+
+.remember-me{
+    accent-color: #444444;
+}
+
+.auth-button{
+    background-color: #171717;
+    width: 240px;
+    height:36px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border:none;
+    font-family:'Roboto Mono', monospace;
+    font-size: 15px;
+    color: white;
 }

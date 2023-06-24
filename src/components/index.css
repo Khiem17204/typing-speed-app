@@ -187,3 +187,16 @@ margin-left: auto;
     font-size: 15px;
     color: white;
 }
+
+.word{
+    font-family: 'Roboto Mono', monospace;
+}
+.word-correct{
+    font-weight: bold;
+}
+.word-incorrect{
+    color: red;
+}
+/* .word-incorrect-general{
+    color: blue;
+} */

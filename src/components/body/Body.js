@@ -6,11 +6,13 @@ import Typing from './Typing'
 export default function Body() {
     const [seconds, setTime] = useState(60)
     const [started, setStarted] = useState(false)
+
+
     function countdown() {
         setStarted(prevStart => !prevStart)
         let interval = setInterval(() => {
                 setTime(prevTime => {
-                    if (prevTime == 0){
+                    if (prevTime === 0){
                         clearInterval(interval)
                     }
                     else{
@@ -24,7 +26,7 @@ export default function Body() {
         <>
             <Countdown time={seconds} />
             <button className="button--start" onClick={countdown}> Start </button>
-            <Typing />
+            <Typing/>
         </>
     )
 }

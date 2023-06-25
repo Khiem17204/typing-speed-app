@@ -25,8 +25,8 @@ export default function Body() {
     return (
         <>
             <Countdown time={seconds} />
-            <button className="button--start" onClick={countdown}> Start </button>
-            <Typing/>
+            {/* <button className="button--start" onClick={countdown}> Start </button> */}
+            <Typing />
         </>
     )
 }

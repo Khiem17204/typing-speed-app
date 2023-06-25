@@ -1,5 +1,5 @@
 .header{
-    background-color: #000000;
+    background-color: transparent;
     min-height: 100px;
     display: flex;
     /* position: absolute; */
@@ -47,7 +47,7 @@ margin-left: auto;
 }
 
 .footer{
-    background-color: #000000;
+    background-color: transparent;
     min-height: 100px;
     display: flex;
     position: fixed;
@@ -87,16 +87,16 @@ margin-left: auto;
 .typing--section{
     display: flex;
     flex-direction: column;
-    padding: 10px 50px;
+    padding: 100px   180px;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
     margin-bottom: 50px;
     margin-left: 50px;
     margin-right: 50px;
-    font-size: 20px;
+    font-size: 30px;
     color: rgb(233, 231, 231);
-    box-shadow: 2px 2px 2px 2px #aaaaaa;
+    /* box-shadow: 2px 2px 2px 2px #aaaaaa; */
 }
 
 .button--start{
@@ -114,21 +114,6 @@ margin-left: auto;
     border: none;
 }
 
-.input{
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 25px;
-    color: rgb(0, 0, 0);
-    padding: 10px 0px;
-    border-radius: 10px;
-    background-color: #eae9e9;
-    border: none;
-    text-indent: 20px;
-}
 
 .auth{
     width: 50vw;
@@ -139,8 +124,6 @@ margin-left: auto;
     margin-right: auto;
     padding: 10vh;
     font-family: 'Roboto Mono', monospace;
-    /* font-weight: 100 */
-    /* background-color: red; */
 }
 
 .auth > h4 {
@@ -186,4 +169,20 @@ margin-left: auto;
     font-family:'Roboto Mono', monospace;
     font-size: 15px;
     color: white;
+}
+
+.word-unrendered{
+    font-family: 'Roboto Mono', monospace;
+    color: #444444;
+    font-weight: 1000;
+}
+.word-correct{
+    font-weight: bold;
+    color: 	#C0C0C0;
+    font-family: 'Roboto Mono', monospace;
+}
+.word-incorrect{
+    font-weight: bold;
+    color: #C41E3A;
+    font-family: 'Roboto Mono', monospace;
 }

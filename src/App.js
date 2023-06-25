@@ -10,11 +10,13 @@ function App() {
   const login = () => setIsLoggedIn(true)
   const logout = () => setIsLoggedIn(false)
 
+  
+  
   return (
     <>
     
    <Header />
-    <Body />
+    <Body/>
     {/* <Login /> */}
     <Footer />
     </>

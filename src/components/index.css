@@ -76,21 +76,23 @@ margin-left: auto;
 .countdown-timer{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-size: 50px;
-    color: rgb(252, 246, 246);
+    margin-top: 150px;
+    margin-left: 230px;
+    /* margin-bottom: 50px; */
+    font-size: 25px;
+    color: #557D8D;
 }
 
 .typing--section{
     display: flex;
     flex-direction: column;
-    padding: 100px   180px;
+    padding-left: 180px;
+    padding-right: 180px;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-bottom: 50px;
     margin-left: 50px;
     margin-right: 50px;

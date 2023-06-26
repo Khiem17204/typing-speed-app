@@ -22,60 +22,84 @@ export default function Typing({ props }) {
 
     const handleKeyDown = (event) => {
         keyCode = event.keyCode;
-        if (keyCode == 32){
+        if (keyCode === 32) {
             setCurrInput([])
             setCurrWord(prevState => prevState + 1)
             setCurrIndex(-1)
             setChar("space")
         }
-        else if (keyCode == 8){
-            if (currInput != []){
-                setCurrInput(currInput => currInput.slice(0,-1))
-                setCurrIndex((index, char) => {
-                    if (index >= 0){
-                        return index -1
+        else if (keyCode === 8) {
+            if (currInput !== []) {
+                setCurrInput(currInput => currInput.slice(0, -1))
+                setCurrIndex((index) => {
+                    if (index >= 0) {
+                        return index - 1
                     }
-                    else{
+                    else {
                         return -1
                     }
                 })
                 setChar("backspace")
             }
-            
+
         }
-        else if (keyCode >= 65 && keyCode <= 90){
+        else if (keyCode >= 65 && keyCode <= 90) {
             let chrCode = keyCode - 48 * Math.floor(keyCode / 48);
-            let chr = String.fromCharCode((96 <= keyCode) ? chrCode: keyCode);            
+            let chr = String.fromCharCode((96 <= keyCode) ? chrCode : keyCode);
             setChar(chr.toLowerCase())
             setCurrInput(Input => [...Input, chr.toLowerCase()])
             setCurrIndex(Index => Index + 1)
         }
-        
+
     };
 
+    function injectExtraWords(words,currIndex, currWord, currInput, char) {
+        if (char !== "backspace" && currIndex >= words[currWord]?.length) {
+            let element = document.createElement("span");
+            let space = document.createElement("span")
+            space.appendChild(
+                document.createTextNode(" ")
+            )
+            element.key = currIndex + 1
+            element.id = `${currWord}-${currIndex}`
+            element.className = "word-incorrect"
+            element.onKeyDown = "handleKeyDown"
+            
+            element.appendChild(
+                document.createTextNode(`${currInput[currInput.length - 1]}`)
+            )
+            document.getElementById(currWord).removeChild(document.getElementById(currWord).lastChild)
+            document.getElementById(currWord).appendChild(element)
+            document.getElementById(currWord).appendChild(space)
+        }
 
+    }
 
-    function changeColor(){
+    function changeColor() {
 
         let element = document.getElementById(`${currWord}-${currIndex}`)
         console.log(currWord, currIndex)
         // console.log(element.innerHTML)
-        if (char === "backspace"){
-            let element2 = document.getElementById(`${currWord}-${currIndex +1}`)
-            if (element2){
-                element2.className="word-unrendered"
+        if (char === "backspace") {
+            let element2 = document.getElementById(`${currWord}-${currIndex + 1}`)
+            if (element2) {
+                element2.className = "word-unrendered"
             }
         }
-        else{
-            if (element){
-                element.className=`word-${checkMatch(char)}`
-                
-            } 
+        else {
+            if (element) {
+                element.className = `word-${checkMatch(char)}`
+
+            }
         }
-               
+
     }
 
-    
+    useEffect(() => {
+        injectExtraWords(words, currIndex, currWord, currInput,char)
+
+    }, [currInput, currIndex,words])
+
     useEffect(() => {
         changeColor()
     }, [currInput, currIndex])
@@ -83,63 +107,52 @@ export default function Typing({ props }) {
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
-    
+
         return () => {
-          window.removeEventListener('keydown', handleKeyDown);
+            window.removeEventListener('keydown', handleKeyDown);
         };
     }, []);
 
     useEffect(() => {
-        console.log('A key was pressed: ', currInput, char, words[currWord]);
+        console.log('A key was pressed: ', currInput, char, words[currWord], currIndex);
     }, [currInput]);
-    
-  
+
+
 
     function generateWords(n) {
         return new Array(WORDS).fill(null).map(() => generate())
     }
 
-    function checkMatch(char){
-        if (words[currWord][currIndex] === char){
+    function checkMatch(char) {
+        if (words[currWord][currIndex] === char) {
             return "correct"
-        }else{
+        } else {
             return "incorrect"
         }
-        
+
     }
-    function checkFinished(){
-        if (WORDS < currWord){
+    function checkFinished() {
+        if (WORDS < currWord) {
             return true
         }
         return false
     }
-    // function handleKeyDown({ keyCode }) {
-    //     if (keyCode === 32) {
-    //         setCurrInput("")
-    //         setCurrWord(prevState => prevState + 1)
-    //         checkMatch()
-    //     }
-    // }
-    // function checkMatch() {
-    //     const wordToCompare = words[currWord]
-    //     // return wordToCompare === currInput.trim()
-    //     console.log(wordToCompare === currInput.trim())
-    // }
+
     return (
         <div>
             <div className='typing--section'>
                 <div className="prompt">
-                    {words.map((word, i) => (<span key={i}>
-                        <span >
-                            {word.split("").map((char, idx) => (
-                                <>
-                                    <span key={idx} id={`${i}-${idx}`} className="word-unrendered" onKeyDown={handleKeyDown}>{char}</span>
-                                    {/* < Character class= */}
-                                </>
+                    {words.map((word, i) => (<span key={i} id={i}>
 
-                            ))}
-                            <span> </span>
-                        </span>
+                        {word.split("").map((char, idx) => (
+                            <>
+                                <span key={idx} id={`${i}-${idx}`} className="word-unrendered" onKeyDown={handleKeyDown}>{char}</span>
+                                {/* < Character class= */}
+                            </>
+
+                        ))}
+                        <span> </span>
+
                     </span>
                     )
                     )}

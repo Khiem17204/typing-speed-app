@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState,useEffect } from "react"
 import {generate} from "random-words"
 const NUMB_OF_WORDS = 100
@@ -91,6 +92,30 @@ function App() {
        <p> Word Correct: {correct}</p>
        <p> Accuracy : {currentCharCorrect/(currentCharCorrect+currentCharIncorrect)*100} %</p>
     </div>
+=======
+import './App.css';
+import React, {useState, useEffect} from 'react'
+import Header from './components/Header'
+import Body from "./components/body/Body"
+import Login from "./components/Login"
+import Footer from "./components/Footer"
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const login = () => setIsLoggedIn(true)
+  const logout = () => setIsLoggedIn(false)
+
+  
+  
+  return (
+    <>
+    
+   <Header />
+    <Body/>
+    {/* <Login /> */}
+    <Footer />
+    </>
+>>>>>>> origin/main
   );
 
 }

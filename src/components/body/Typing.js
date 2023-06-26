@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { generate } from 'random-words'
-import { toBeChecked } from '@testing-library/jest-dom/matchers'
 
-export default function Typing({ props }) {
-    const WORDS = 30
+import React, {useState, useEffect} from 'react'
+import { generate } from 'random-words'
+
+export default function Typing(props) {
+    const WORDS = 103
     const [words, setWords] = useState([])
-    const [currInput, setCurrInput] = useState([])
-    const [char, setChar] = useState("")
+    const [currInput, setCurrInput] = useState("")
     const [currWord, setCurrWord] = useState(0)
-    const [currIndex, setCurrIndex] = useState(-1)
+
     useEffect(() => {
         setWords(generateWords())
     }, [])

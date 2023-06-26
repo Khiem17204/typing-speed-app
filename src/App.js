@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> huy/tung
 import './App.css';
 import React, {useState, useEffect} from 'react'
 import Header from './components/Header'
@@ -11,12 +14,16 @@ function App() {
   const login = () => setIsLoggedIn(true)
   const logout = () => setIsLoggedIn(false)
 
+<<<<<<< HEAD
   
   
+=======
+>>>>>>> huy/tung
   return (
     <>
     
    <Header />
+<<<<<<< HEAD
     <Body/>
     {/* <Login /> */}
     <Footer />
@@ -116,6 +123,12 @@ function App() {
        <p> Accuracy : {currentCharCorrect/(currentCharCorrect+currentCharIncorrect)*100} %</p>
     </div>
 >>>>>>> main
+=======
+    <Body />
+    {/* <Login /> */}
+    <Footer />
+    </>
+>>>>>>> huy/tung
   );
 
 }

@@ -1,5 +1,9 @@
 .header{
+<<<<<<< HEAD
     background-color: transparent;
+=======
+    background-color: #000000;
+>>>>>>> huy/tung
     min-height: 100px;
     display: flex;
     /* position: absolute; */
@@ -47,7 +51,11 @@ margin-left: auto;
 }
 
 .footer{
+<<<<<<< HEAD
     background-color: transparent;
+=======
+    background-color: #000000;
+>>>>>>> huy/tung
     min-height: 100px;
     display: flex;
     position: fixed;
@@ -76,6 +84,7 @@ margin-left: auto;
 .countdown-timer{
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
     /* justify-content: center; */
     align-items: center;
     margin-top: 150px;
@@ -83,11 +92,20 @@ margin-left: auto;
     /* margin-bottom: 50px; */
     font-size: 25px;
     color: #557D8D;
+=======
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 50px;
+    color: rgb(252, 246, 246);
+>>>>>>> huy/tung
 }
 
 .typing--section{
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     padding-left: 180px;
     padding-right: 180px;
     justify-content: center;
@@ -99,6 +117,18 @@ margin-left: auto;
     font-size: 30px;
     color: rgb(233, 231, 231);
     /* box-shadow: 2px 2px 2px 2px #aaaaaa; */
+=======
+    padding: 10px 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 20px;
+    color: rgb(233, 231, 231);
+    box-shadow: 2px 2px 2px 2px #aaaaaa;
+>>>>>>> huy/tung
 }
 
 .button--start{
@@ -116,6 +146,24 @@ margin-left: auto;
     border: none;
 }
 
+<<<<<<< HEAD
+=======
+.input{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    padding: 10px 0px;
+    border-radius: 10px;
+    background-color: #eae9e9;
+    border: none;
+    text-indent: 20px;
+}
+>>>>>>> huy/tung
 
 .auth{
     width: 50vw;
@@ -126,6 +174,11 @@ margin-left: auto;
     margin-right: auto;
     padding: 10vh;
     font-family: 'Roboto Mono', monospace;
+<<<<<<< HEAD
+=======
+    /* font-weight: 100 */
+    /* background-color: red; */
+>>>>>>> huy/tung
 }
 
 .auth > h4 {
@@ -171,6 +224,7 @@ margin-left: auto;
     font-family:'Roboto Mono', monospace;
     font-size: 15px;
     color: white;
+<<<<<<< HEAD
 }
 
 .word-unrendered{
@@ -188,3 +242,6 @@ margin-left: auto;
     color: #C41E3A;
     font-family: 'Roboto Mono', monospace;
 }
+=======
+}
+>>>>>>> huy/tung

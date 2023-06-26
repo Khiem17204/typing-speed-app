@@ -54,23 +54,32 @@ export default function Typing({ props }) {
     };
 
     function injectExtraWords(words,currIndex, currWord, currInput, char) {
-        if (char !== "backspace" && currIndex >= words[currWord]?.length) {
-            let element = document.createElement("span");
-            let space = document.createElement("span")
-            space.appendChild(
-                document.createTextNode(" ")
-            )
-            element.key = currIndex + 1
-            element.id = `${currWord}-${currIndex}`
-            element.className = "word-incorrect"
-            element.onKeyDown = "handleKeyDown"
+        let space = document.createElement("span")
+        space.appendChild(
+                document.createTextNode(" "))
+        if (char != "backspace" && currIndex >= words[currWord]?.length) {
             
-            element.appendChild(
-                document.createTextNode(`${currInput[currInput.length - 1]}`)
-            )
+                let element = document.createElement("span");
+                element.key = currIndex + 1
+                element.id = `${currWord}-${currIndex}`
+                element.className = "word-incorrect"
+                element.onKeyDown = "handleKeyDown"
+                
+                element.appendChild(
+                    document.createTextNode(`${currInput[currInput.length - 1]}`)
+                )
+                document.getElementById(currWord).removeChild(document.getElementById(currWord).lastChild)
+                document.getElementById(currWord).appendChild(element)
+                document.getElementById(currWord).appendChild(space)
+            
+            
+            
+        }
+        else if (char == "backspace" && currIndex >= words[currWord]?.length -1){
             document.getElementById(currWord).removeChild(document.getElementById(currWord).lastChild)
-            document.getElementById(currWord).appendChild(element)
+            document.getElementById(currWord).removeChild(document.getElementById(currWord).lastChild)
             document.getElementById(currWord).appendChild(space)
+            
         }
 
     }
@@ -98,11 +107,11 @@ export default function Typing({ props }) {
     useEffect(() => {
         injectExtraWords(words, currIndex, currWord, currInput,char)
 
-    }, [currInput, currIndex,words])
+    }, [currInput])
 
     useEffect(() => {
         changeColor()
-    }, [currInput, currIndex])
+    }, [currInput])
 
 
     useEffect(() => {
@@ -142,7 +151,7 @@ export default function Typing({ props }) {
         <div>
             <div className='typing--section'>
                 <div className="prompt">
-                    {words.map((word, i) => (<span key={i} id={i}>
+                    {words.map((word, i) => (<span key={i} id={`${i}`}>
 
                         {word.split("").map((char, idx) => (
                             <>

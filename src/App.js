@@ -5,7 +5,7 @@ import Header from './components/Header'
 import Body from "./components/body/Body"
 import Login from "./components/Login"
 import Footer from "./components/Footer"
-
+import Result from "./components/Result"
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const login = () => setIsLoggedIn(true)
@@ -18,9 +18,12 @@ function App() {
     
    <Header />
     <Body/>
-    {/* <Login /> */}
+    {/* <Login /> 
+    <Result />
+    */}
     <Footer />
     </>
+  )
 }
 
 

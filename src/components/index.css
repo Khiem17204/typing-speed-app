@@ -45,7 +45,14 @@ margin-left: auto;
     margin-right: 30px
     
 }
-
+.user-logo {
+    display: flex;
+    margin-right: 0px;
+    color: #444444;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 900px;
+}
 .footer{
     background-color: transparent;
     min-height: 100px;

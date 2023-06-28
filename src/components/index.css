@@ -1,5 +1,5 @@
 .header{
-    background-color: #000000;
+    background-color: transparent;
     min-height: 100px;
     display: flex;
     /* position: absolute; */
@@ -45,9 +45,16 @@ margin-left: auto;
     margin-right: 30px
     
 }
-
+.user-logo {
+    display: flex;
+    margin-right: 0px;
+    color: #444444;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 900px;
+}
 .footer{
-    background-color: #000000;
+    background-color: transparent;
     min-height: 100px;
     display: flex;
     position: fixed;
@@ -76,27 +83,29 @@ margin-left: auto;
 .countdown-timer{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-size: 50px;
-    color: rgb(252, 246, 246);
+    margin-top: 150px;
+    margin-left: 230px;
+    /* margin-bottom: 50px; */
+    font-size: 25px;
+    color: #557D8D;
 }
 
 .typing--section{
     display: flex;
     flex-direction: column;
-    padding: 10px 50px;
+    padding-left: 180px;
+    padding-right: 180px;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-bottom: 50px;
     margin-left: 50px;
     margin-right: 50px;
-    font-size: 20px;
+    font-size: 30px;
     color: rgb(233, 231, 231);
-    box-shadow: 2px 2px 2px 2px #aaaaaa;
+    /* box-shadow: 2px 2px 2px 2px #aaaaaa; */
 }
 
 .button--start{
@@ -114,21 +123,6 @@ margin-left: auto;
     border: none;
 }
 
-.input{
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 25px;
-    color: rgb(0, 0, 0);
-    padding: 10px 0px;
-    border-radius: 10px;
-    background-color: #eae9e9;
-    border: none;
-    text-indent: 20px;
-}
 
 .auth{
     width: 50vw;
@@ -139,8 +133,6 @@ margin-left: auto;
     margin-right: auto;
     padding: 10vh;
     font-family: 'Roboto Mono', monospace;
-    /* font-weight: 100 */
-    /* background-color: red; */
 }
 
 .auth > h4 {
@@ -187,3 +179,120 @@ margin-left: auto;
     font-size: 15px;
     color: white;
 }
+
+.word-unrendered{
+    font-family: 'Roboto Mono', monospace;
+    color: #444444;
+    font-weight: 1000;
+}
+.word-correct{
+    font-weight: bold;
+    color: 	#C0C0C0;
+    font-family: 'Roboto Mono', monospace;
+}
+.word-incorrect{
+    font-weight: bold;
+    color: #e44c65;
+    font-family: 'Roboto Mono', monospace;
+}
+.word-redundant{
+    font-weight: bold;
+    color: #e44c6594;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.result {
+    margin-top: 70px;
+    font-family:'Roboto Mono', monospace;
+    color:#EEEEEE ;
+}
+.summary {
+    display: flex;
+    align-content:center;
+    justify-content: center;
+}
+
+.vertical-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wpm > h3,.acc > h3  {
+    font-size: 30px;
+    margin: 0;
+    color: #444444;
+}
+
+.wpm > h1,.acc > h1 {
+    font-size: 60px;
+    font-weight:700;
+    margin: 0;
+}
+
+.wpm, .acc {
+    width: 120px;
+}
+
+.graph {
+    display: flex;
+}
+
+.horizontal-stat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.stat-list {
+    list-style-type: none;
+    font-family:'Roboto Mono', monospace;
+    color:#EEEEEE ;
+    
+    
+}
+.stat {
+    display: inline-block;
+    justify-content: center;
+    margin-left: 100px;
+    margin-right: 90px;
+}
+.stat h5{
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: #444444;
+}
+.stat h6 {
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.stat h4 {
+    font-size: 35px;
+    margin-top: 0;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #444444;
+}
+.grey-sign-in {
+    color: #444444;
+
+}
+.icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .icon-block {
+    margin-right: 50px;
+    margin-left: 50px;
+    color: #444444;
+  }

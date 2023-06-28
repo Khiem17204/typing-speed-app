@@ -75,7 +75,7 @@ export default function Typing({ props }) {
             
             
         }
-        else if (char == "backspace" && currIndex >= words[currWord]?.length -1){
+        else if (char === "backspace" && currIndex >= words[currWord]?.length -1){
             document.getElementById(currWord).removeChild(document.getElementById(currWord).lastChild)
             document.getElementById(currWord).removeChild(document.getElementById(currWord).lastChild)
             document.getElementById(currWord).appendChild(space)
@@ -133,6 +133,9 @@ export default function Typing({ props }) {
     }
 
     function checkMatch(char) {
+        if (currIndex >= words[currWord].length){
+            return "redundant"
+        }
         if (words[currWord][currIndex] === char) {
             return "correct"
         } else {

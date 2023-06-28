@@ -133,6 +133,9 @@ export default function Typing({ props }) {
     }
 
     function checkMatch(char) {
+        if (currIndex >= words[currWord].length){
+            return "redundant"
+        }
         if (words[currWord][currIndex] === char) {
             return "correct"
         } else {

@@ -4,8 +4,13 @@ import { generate } from 'random-words'
 export default function Typing(props) {
     const WORDS = 103
     const [words, setWords] = useState([])
-    const [currInput, setCurrInput] = useState("")
+    const [charInput, setCharInput] = useState([])
+
+    // const [currInput, setCurrInput] = useState("")
+
+    const [charIndex, setCharIndex] = useState(0)
     const [currWord, setCurrWord] = useState(0)
+    const [lastComplete, setLastComplete] = useState(-1)
 
     useEffect(() => {
         setWords(generateWords())
@@ -16,15 +21,29 @@ export default function Typing(props) {
     }
 
     function handleKeyDown({keyCode}){
-if(keyCode === 32){
-    setCurrInput("")
-    setCurrWord(prevState => prevState + 1)
-    checkMatch()
-}
+    if(keyCode === 32){
+        if (checkMatch()){
+            setLastComplete(currWord)
+        }
+        // setCurrInput("")
+        setCurrWord(prevState => prevState + 1)
     }
+    else if (keyCode === 8) {
+        if (charIndex === 0 && lastComplete < currWord -1){
+            setCurrWord(prevState => prevState -1)
+            
+        }
+    }
+
+    // backspace & else
+
+}
+    function handleChange(){
+        return 
+}
     function checkMatch() {
         const wordToCompare = words[currWord]
-        // return wordToCompare === currInput.trim()
+        //  TODO : rewrite this funciton
         console.log(wordToCompare === currInput.trim())
     }
     return (
@@ -32,7 +51,7 @@ if(keyCode === 32){
             <div className='typing--section'>
                 <div className="prompt"> 
                         {words.map((word, i) =>  (<span key={i}> 
-                        <span >
+                        
                             {word.split("").map((char, idx) => (
                                 <>
                                 <span key={idx}>{char}</span>
@@ -42,16 +61,16 @@ if(keyCode === 32){
                             ))}
                             <span> </span>
                         </span>
-                        </span>
                         )
                         )}
 {/* {JSON.stringify(words)} */}
                 </div>
                 <div className="input--section">
-                    <input className="input"  placeholder="Start Typing" onKeyDown={handleKeyDown} value={currInput} onChange={(event) => setCurrInput(event.target.value)}/>
+                    <input className="input"  placeholder="Start Typing" onKeyDown={handleKeyDown} value={currInput} onChange={handleChange}/>
                 </div>
             </div>
         </ div>
     )
 
 }
+// onChange={(event) => setCurrInput(event.target.value)}

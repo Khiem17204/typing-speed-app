@@ -30,6 +30,7 @@
     margin-top:auto;
     margin-bottom: auto;
     font-family: 'Lexend', sans-serif;
+    text-decoration: none;
 }
 
 .header--nav{
@@ -237,9 +238,7 @@
     font-weight: bolder;
     font-size: medium;
 }
-=======
-    font-family: 'Roboto Mono', monospace;
-}
+
 .word-redundant{
     font-weight: bold;
     color: #e44c6594;

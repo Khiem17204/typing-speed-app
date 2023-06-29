@@ -126,18 +126,11 @@ export default function Typing({ numWords }) {
         };
     }, []);
 
-
-    function checkMatch(char) {
-
+ 
     useEffect(() => {
         console.log('A key was pressed: ', currInput, char, words[currWord], currIndex);
     }, [currInput]);
 
-
-
-    function generateWords(n) {
-        return new Array(WORDS).fill(null).map(() => generate())
-    }
 
     function checkMatch(char) {
         if (currIndex >= words[currWord].length){
@@ -149,7 +142,7 @@ export default function Typing({ numWords }) {
         } else {
             return "incorrect"
         }
-
+    }
 
 
     return (

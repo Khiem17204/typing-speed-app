@@ -1,32 +1,80 @@
-import React from 'react'
-import {useState, useEffect} from 'react'
-import Countdown from './Countdown'
-import Typing from './Typing'
+import React, { useState, useEffect } from 'react';
+import Countdown from './Countdown';
+import Typing from './Typing';
+import Controller from './Controller';
 
 export default function Body() {
-    const [seconds, setTime] = useState(60)
-    const [started, setStarted] = useState(false)
+    const [seconds, setTime] = useState(0);
+    const [words, setWords] = useState(60);
+    const normal = 60;
+    const [started, setStarted] = useState(false);
+    const [selectedMode, setSelectedMode] = useState('');
 
+    useEffect(() => {
+        let interval;
 
-    function countdown() {
-        setStarted(prevStart => !prevStart)
-        let interval = setInterval(() => {
+        if (started && seconds > 0) {
+            interval = setInterval(() => {
                 setTime(prevTime => {
-                    if (prevTime === 0){
-                        clearInterval(interval)
+                    if (prevTime === 0) {
+                        clearInterval(interval);
+                        setStarted(false)
+                        return 0
+                    } else {
+                        return prevTime - 1
                     }
-                    else{
-
-                       return prevTime -1
-                    }
-                    })
+                })
             }, 1000)
         }
+
+        return () => {
+            clearInterval(interval)
+        }
+    }, [started, seconds])
+
+
+    const handleKeyDown = (event) => {
+        let keyCode = event.keyCode
+        if (!started && keyCode >= 65 && keyCode <= 90) {
+            setStarted(true)
+        }
+        window.removeEventListener('keydown', handleKeyDown)
+    }
+    window.addEventListener('keydown', handleKeyDown)
+
+    const handleModeChange = (mode) => {
+        setSelectedMode(mode);
+    };
+
+    useEffect(() => {
+        if (selectedMode === '30s') {
+            setTime(30);
+            setWords(normal);
+        } else if (selectedMode === '60s') {
+            setTime(60);
+            setWords(normal);
+        } else if (selectedMode === '120s') {
+            setTime(120);
+            setWords(normal);
+        } else if (selectedMode === '60w') {
+            setTime(0);
+            setWords(60);
+        }
+        else if (selectedMode === '120w') {
+            setTime(0);
+            setWords(120);
+        } else if (selectedMode === '180w') {
+            setTime(0);
+            setWords(180);
+        }
+    }, [selectedMode]);
+
     return (
-        <>
-            <Countdown time={seconds} />
-            {/* <button className="button--start" onClick={countdown}> Start </button> */}
-            <Typing />
-        </>
-    )
+        <div className='main-content'>
+            <Controller onModeChange={handleModeChange} />
+            <Countdown time={seconds} onKeyDown={handleKeyDown} />
+
+            <Typing numWords={words} />
+        </div>
+    );
 }

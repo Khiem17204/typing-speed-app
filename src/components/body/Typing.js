@@ -52,6 +52,7 @@ export default function Typing({ numWords }) {
 
     };
 
+
     function injectExtraWords(words, currIndex, currWord, currInput, char) {
         let space = document.createElement("span")
         space.appendChild(
@@ -83,6 +84,8 @@ export default function Typing({ numWords }) {
 
     }
 
+
+
     function changeColor() {
 
         let element = document.getElementById(`${currWord}-${currIndex}`)
@@ -104,7 +107,9 @@ export default function Typing({ numWords }) {
     }
 
     useEffect(() => {
+
         injectExtraWords(words, currIndex, currWord, currInput, char)
+
 
     }, [currInput])
 
@@ -121,14 +126,31 @@ export default function Typing({ numWords }) {
         };
     }, []);
 
+
     function checkMatch(char) {
+
+    useEffect(() => {
+        console.log('A key was pressed: ', currInput, char, words[currWord], currIndex);
+    }, [currInput]);
+
+
+
+    function generateWords(n) {
+        return new Array(WORDS).fill(null).map(() => generate())
+    }
+
+    function checkMatch(char) {
+        if (currIndex >= words[currWord].length){
+            return "redundant"
+        }
+
         if (words[currWord][currIndex] === char) {
             return "correct"
         } else {
             return "incorrect"
         }
 
-    }
+
 
     return (
         <div>

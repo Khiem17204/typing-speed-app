@@ -2,20 +2,19 @@ import React, { useState, useEffect } from 'react'
 import { generate } from 'random-words'
 import { toBeChecked } from '@testing-library/jest-dom/matchers'
 
-export default function Typing({ props }) {
-    const WORDS = 30
+export default function Typing({ numWords }) {
     const [words, setWords] = useState([])
     const [currInput, setCurrInput] = useState([])
     const [char, setChar] = useState("")
     const [currWord, setCurrWord] = useState(0)
     const [currIndex, setCurrIndex] = useState(-1)
+
     useEffect(() => {
         setWords(generateWords())
-    }, [])
+    }, [numWords])
 
-
-    function handleStart() {
-        setWords(generateWords())
+    function generateWords(n) {
+        return new Array(numWords).fill(null).map(() => generate())
     }
 
     let keyCode = 0;
@@ -53,33 +52,33 @@ export default function Typing({ props }) {
 
     };
 
-    function injectExtraWords(words,currIndex, currWord, currInput, char) {
+    function injectExtraWords(words, currIndex, currWord, currInput, char) {
         let space = document.createElement("span")
         space.appendChild(
-                document.createTextNode(" "))
-        if (char != "backspace" && currIndex >= words[currWord]?.length) {
-            
-                let element = document.createElement("span");
-                element.key = currIndex + 1
-                element.id = `${currWord}-${currIndex}`
-                element.className = "word-incorrect"
-                element.onKeyDown = "handleKeyDown"
-                
-                element.appendChild(
-                    document.createTextNode(`${currInput[currInput.length - 1]}`)
-                )
-                document.getElementById(currWord).removeChild(document.getElementById(currWord).lastChild)
-                document.getElementById(currWord).appendChild(element)
-                document.getElementById(currWord).appendChild(space)
-            
-            
-            
+            document.createTextNode(" "))
+        if (char !== "backspace" && currIndex >= words[currWord]?.length) {
+
+            let element = document.createElement("span");
+            element.key = currIndex + 1
+            element.id = `${currWord}-${currIndex}`
+            element.className = "word-incorrect"
+            element.onKeyDown = "handleKeyDown"
+
+            element.appendChild(
+                document.createTextNode(`${currInput[currInput.length - 1]}`)
+            )
+            document.getElementById(currWord).removeChild(document.getElementById(currWord).lastChild)
+            document.getElementById(currWord).appendChild(element)
+            document.getElementById(currWord).appendChild(space)
+
+
+
         }
-        else if (char == "backspace" && currIndex >= words[currWord]?.length -1){
+        else if (char === "backspace" && currIndex >= words[currWord]?.length - 1) {
             document.getElementById(currWord).removeChild(document.getElementById(currWord).lastChild)
             document.getElementById(currWord).removeChild(document.getElementById(currWord).lastChild)
             document.getElementById(currWord).appendChild(space)
-            
+
         }
 
     }
@@ -105,7 +104,7 @@ export default function Typing({ props }) {
     }
 
     useEffect(() => {
-        injectExtraWords(words, currIndex, currWord, currInput,char)
+        injectExtraWords(words, currIndex, currWord, currInput, char)
 
     }, [currInput])
 
@@ -122,16 +121,6 @@ export default function Typing({ props }) {
         };
     }, []);
 
-    useEffect(() => {
-        console.log('A key was pressed: ', currInput, char, words[currWord], currIndex);
-    }, [currInput]);
-
-
-
-    function generateWords(n) {
-        return new Array(WORDS).fill(null).map(() => generate())
-    }
-
     function checkMatch(char) {
         if (words[currWord][currIndex] === char) {
             return "correct"
@@ -139,12 +128,6 @@ export default function Typing({ props }) {
             return "incorrect"
         }
 
-    }
-    function checkFinished() {
-        if (WORDS < currWord) {
-            return true
-        }
-        return false
     }
 
     return (

@@ -1,3 +1,4 @@
+/* header and bottom */
 .header{
     background-color: transparent;
     min-height: 100px;
@@ -34,7 +35,7 @@
 .header--nav{
     display:flex;
     list-style-type: none;
-margin-left: auto;
+    margin-left: auto;
 }
 
 .header--nav > li{
@@ -73,17 +74,32 @@ margin-left: auto;
     color: #5d5757
 }
 
+/* main screen */
+.main-content{
+    font-family: 'Roboto Mono', monospace;
+    box-sizing: border-box;
+    align-items: center;
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 32px;
+    margin-top: 150px;
+}
+
 .countdown-timer{
     display: flex;
     flex-direction: row;
     /* justify-content: center; */
     align-items: center;
-    margin-top: 150px;
+    /* margin-top: 150px; */
     margin-left: 230px;
     /* margin-bottom: 50px; */
     font-size: 25px;
     color: #557D8D;
+    
 }
+
 
 .typing--section{
     display: flex;
@@ -101,22 +117,8 @@ margin-left: auto;
     /* box-shadow: 2px 2px 2px 2px #aaaaaa; */
 }
 
-.button--start{
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 30px;
-    color: rgb(0, 0, 0);
-    padding: 10px 50px;
-    border-radius: 10px;
-    background-color: #eae9e9;
-    border: none;
-}
 
-
+/* login and user page */
 .auth{
     width: 50vw;
     min-height: 70vh;
@@ -173,10 +175,11 @@ margin-left: auto;
     color: white;
 }
 
+/* word */
 .word-unrendered{
-    font-family: 'Roboto Mono', monospace;
     color: #444444;
     font-weight: 1000;
+    font-family: 'Roboto Mono', monospace;
 }
 .word-correct{
     font-weight: bold;
@@ -187,4 +190,42 @@ margin-left: auto;
     font-weight: bold;
     color: #e44c65;
     font-family: 'Roboto Mono', monospace;
+}
+
+
+.controller-wrapper{
+    font-family: "Roboto Mono";
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    color: rgb(238, 238, 238);
+    background-color: rgb(23, 23, 23);
+    width: 400px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.controller-mode{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.controller-mode-button{
+    font-family: "Roboto Mono";
+    color: rgb(238, 238, 238);
+    appearance: none;
+    background-color: rgb(23, 23, 23);
+    border-style: none;   
+}
+
+.controller-mode-button:disabled{
+    font-weight: bolder;
+    font-size: medium;
 }

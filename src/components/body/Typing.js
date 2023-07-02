@@ -6,6 +6,7 @@ export default function Typing({ numWords }) {
     const [words, setWords] = useState([])
     const [currInput, setCurrInput] = useState("")
     const [currWord, setCurrWord] = useState(0)
+    const [char, setChar] = useState("")
     const [lastComplete, setLastComplete] = useState(-1)
     const [currIndex, setCurrIndex] = useState(-1)
 

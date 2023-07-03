@@ -124,8 +124,6 @@
     color: rgb(233, 231, 231);
     /* box-shadow: 2px 2px 2px 2px #aaaaaa; */
 }
-
-
 /* login and user page */
 .auth{
     width: 50vw;
@@ -401,4 +399,40 @@
     border: none;
     color: #EEEEEE;
     padding: 13px;
+}
+.controller-wrapper{
+    font-family: "Roboto Mono";
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    color: rgb(238, 238, 238);
+    background-color: rgb(23, 23, 23);
+    width: 400px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.controller-mode{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.controller-mode-button{
+    font-family: "Roboto Mono";
+    color: rgb(238, 238, 238);
+    appearance: none;
+    background-color: rgb(23, 23, 23);
+    border-style: none;   
+}
+
+.controller-mode-button:disabled{
+    font-weight: bolder;
+    font-size: medium;
 }

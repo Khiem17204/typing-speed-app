@@ -22,8 +22,8 @@ function App() {
           <Route path="/" element={<Body />} exact/>
           <Route path="/login" element={<Login />} />
           <Route path="/result" element={<Result />} />
+          <Route path='/user' element ={<User  />} />
         </Routes>
-        {/*<User */}
         <Footer />
       </BrowserRouter>
     );

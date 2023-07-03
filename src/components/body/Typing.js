@@ -75,7 +75,7 @@ export default function Typing({ numWords }) {
 
 
         }
-        else if (char ==== "backspace" && currIndex >= words[currWord]?.length - 1) {
+        else if (char === "backspace" && currIndex >= words[currWord]?.length - 1) {
             document.getElementById(currWord).removeChild(document.getElementById(currWord).lastChild)
             document.getElementById(currWord).removeChild(document.getElementById(currWord).lastChild)
             document.getElementById(currWord).appendChild(space)

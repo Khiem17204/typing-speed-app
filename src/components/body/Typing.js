@@ -10,7 +10,19 @@ export default function Typing({ numWords }) {
     const [currIndex, setCurrIndex] = useState(-1)
 
     useEffect(() => {
+        for (let i = 0; i<= currWord; i++){
+            for (let j = 0; j <= words[currWord]?.length; j++){
+                let element = document.getElementById(`${i}-${j}`)
+                if (element){
+                    element.className = "word-unrendered"
+                }
+            }
+        }
         setWords(generateWords())
+        setCurrWord(0)
+        setCurrIndex(-1)
+        setChar("")
+        
     }, [numWords])
 
     function generateWords(n) {

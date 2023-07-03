@@ -33,6 +33,11 @@
     text-decoration: none;
 }
 
+.header--title:hover{
+    text-decoration: none;
+    color: #557D8D;
+}
+
 .header--nav{
     display:flex;
     list-style-type: none;
@@ -48,12 +53,13 @@
     
 }
 .user-logo {
+    font-size: x-large;
     display: flex;
     margin-right: 0px;
     color: #444444;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 900px;
+    margin-left: 750px;
 }
 .footer{
     background-color: transparent;

@@ -16,11 +16,13 @@ export default function Body() {
     useEffect(() => {
         let interval;
 
-        if (started && seconds > 0) {
+        if ((started && seconds >= 0)) {
             interval = setInterval(() => {
                 setTime(prevTime => {
                     if (prevTime === 0) {
                         clearInterval(interval)
+                        setStarted(false)
+                        navigate("/result")
                         return 0
                     } else {
                         return prevTime - 1
@@ -50,7 +52,7 @@ export default function Body() {
 
     useEffect(() => {
         if (selectedMode === '30s') {
-            setTime(30);
+            setTime(5);
             setWords(normal);
         } else if (selectedMode === '60s') {
             setTime(60);
@@ -73,7 +75,6 @@ export default function Body() {
 
     return (
         <div className='main-content'>
-            {seconds === 0 && started && navigate("/result")}
             <Controller onModeChange={handleModeChange} />
             <Countdown time={seconds} onKeyDown={handleKeyDown} />
             <Typing numWords={words} />

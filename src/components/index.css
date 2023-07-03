@@ -187,6 +187,7 @@
     font-family:'Roboto Mono', monospace;
     font-size: 15px;
     color: white;
+    cursor: pointer;
 }
 
 /* word */

@@ -52,7 +52,7 @@ export default function Body() {
 
     useEffect(() => {
         if (selectedMode === '30s') {
-            setTime(5);
+            setTime(30);
             setWords(normal);
         } else if (selectedMode === '60s') {
             setTime(60);
@@ -61,14 +61,14 @@ export default function Body() {
             setTime(120);
             setWords(normal);
         } else if (selectedMode === '60w') {
-            setTime(0);
+            setTime(1000000000);
             setWords(60);
         }
         else if (selectedMode === '120w') {
-            setTime(0);
+            setTime(1000000000);
             setWords(120);
         } else if (selectedMode === '180w') {
-            setTime(0);
+            setTime(1000000000);
             setWords(180);
         }
     }, [selectedMode]);

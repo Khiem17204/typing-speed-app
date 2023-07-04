@@ -7,6 +7,7 @@ import Body from "./components/body/Body"
 import Login from "./components/Login"
 import Footer from "./components/Footer"
 import Result from "./components/Result"
+import User from "./components/User"
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const login = () => setIsLoggedIn(true)
@@ -18,9 +19,10 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Body />} />
+          <Route path="/" element={<Body />} exact/>
           <Route path="/login" element={<Login />} />
           <Route path="/result" element={<Result />} />
+          <Route path='/user' element ={<User  />} />
         </Routes>
         <Footer />
       </BrowserRouter>

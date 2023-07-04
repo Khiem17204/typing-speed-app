@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import { generate } from 'random-words'
 import { toBeChecked } from '@testing-library/jest-dom/matchers'
+import { useNavigate } from 'react-router-dom';
+
+
 
 export default function Typing({ numWords }) {
+    const navigate = useNavigate();
+
     const [words, setWords] = useState([])
     const [currInput, setCurrInput] = useState([])
     const [char, setChar] = useState("")
     const [currWord, setCurrWord] = useState(0)
     const [currIndex, setCurrIndex] = useState(-1)
+    
+    if (currWord >= numWords) {
+        navigate("/result")
+    }
 
     useEffect(() => {
         for (let i = 0; i<= currWord; i++){
@@ -149,6 +158,9 @@ export default function Typing({ numWords }) {
             return "redundant"
         }
 
+        if (currIndex >= words[currWord].length){
+            return "redundant"
+        }
         if (words[currWord][currIndex] === char) {
             return "correct"
         } else {

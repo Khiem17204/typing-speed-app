@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Countdown from './Countdown';
 import Typing from './Typing';
 import Controller from './Controller';
+import { useNavigate } from 'react-router-dom';
 
 export default function Body() {
     const [seconds, setTime] = useState(0);
@@ -10,15 +11,18 @@ export default function Body() {
     const [started, setStarted] = useState(false);
     const [selectedMode, setSelectedMode] = useState('');
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         let interval;
 
-        if (started && seconds > 0) {
+        if ((started && seconds >= 0)) {
             interval = setInterval(() => {
                 setTime(prevTime => {
                     if (prevTime === 0) {
-                        clearInterval(interval);
+                        clearInterval(interval)
                         setStarted(false)
+                        navigate("/result")
                         return 0
                     } else {
                         return prevTime - 1
@@ -57,14 +61,14 @@ export default function Body() {
             setTime(120);
             setWords(normal);
         } else if (selectedMode === '60w') {
-            setTime(0);
+            setTime(1000000000);
             setWords(60);
         }
         else if (selectedMode === '120w') {
-            setTime(0);
+            setTime(1000000000);
             setWords(120);
         } else if (selectedMode === '180w') {
-            setTime(0);
+            setTime(1000000000);
             setWords(180);
         }
     }, [selectedMode]);
@@ -73,7 +77,6 @@ export default function Body() {
         <div className='main-content'>
             <Controller onModeChange={handleModeChange} />
             <Countdown time={seconds} onKeyDown={handleKeyDown} />
-
             <Typing numWords={words} />
         </div>
     );

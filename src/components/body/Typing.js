@@ -13,6 +13,8 @@ export default function Typing({ numWords }) {
     const [char, setChar] = useState("")
     const [currWord, setCurrWord] = useState(0)
     const [currIndex, setCurrIndex] = useState(-1)
+    const [startWordIndex, setStartWordIndex] = useState(0)
+    const [endWordIndex, setEndWordIndex] = useState(60)
     
     if (currWord >= numWords) {
         navigate("/result")
@@ -73,6 +75,13 @@ export default function Typing({ numWords }) {
 
     };
 
+    useEffect(() => {
+        if (currWord >= 10 && currWord % 10 === 0) {
+          setStartWordIndex((prevStartIndex) => prevStartIndex + 10);
+          setEndWordIndex((prevEndIndex) => prevEndIndex + 10);
+        }
+      }, [currWord]);
+
 
     function injectExtraWords(words, currIndex, currWord, currInput, char) {
         let space = document.createElement("span")
@@ -93,7 +102,10 @@ export default function Typing({ numWords }) {
             document.getElementById(currWord).appendChild(element)
             document.getElementById(currWord).appendChild(space)
 
-
+            if (currWord >= 10) {
+                setStartWordIndex(currWord - 10);
+                setEndWordIndex(currWord - 10 + 60);
+              }
 
         }
         else if (char === "backspace" && currIndex >= words[currWord]?.length - 1) {
@@ -173,7 +185,7 @@ export default function Typing({ numWords }) {
         <div>
             <div className='typing--section'>
                 <div className="prompt">
-                    {words.map((word, i) => (<span key={i} id={`${i}`}>
+                    {words.slice(startWordIndex, endWordIndex).map((word, i) => (<span key={i} id={`${i}`}>
 
                         {word.split("").map((char, idx) => (
                             <>

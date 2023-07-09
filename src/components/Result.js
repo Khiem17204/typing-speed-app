@@ -46,6 +46,7 @@ export default function Result() {
                 </ul>
             </div>
             <div className='text'>
+
                 <p><a href='/login' class="grey-sign-in">Sign in</a> to save your result</p>
                 <div className='icon'>
                     <a href="/" class="icon-block"><i class="fa-solid fa-angle-right"></i></a>
@@ -53,6 +54,7 @@ export default function Result() {
                     <a href="/" class="icon-block"><i class="fa-solid fa-triangle-exclamation"></i></a>
                     <a href="/" class="icon-block"><i class="fa-solid fa-angles-left"></i></a>
                     <a href="/" class="icon-block"><i class="fa-solid fa-image"></i></a>
+
                 </div>
             </div>
         </div>

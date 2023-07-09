@@ -3,6 +3,7 @@ import Countdown from './Countdown';
 import Typing from './Typing';
 import Controller from './Controller';
 
+
 import Countword from './Countword';
 
 import { useNavigate } from 'react-router-dom';
@@ -18,13 +19,16 @@ export default function Body() {
 
 
 
+
     const navigate = useNavigate();
 
     useEffect(() => {
         let interval;
 
 
+
         if ((started && seconds >= 0 && selectedMode.endsWith("s"))) {
+
 
             interval = setInterval(() => {
                 setTime(prevTime => {
@@ -52,6 +56,7 @@ export default function Body() {
             setStarted(true)
         }
 
+
         if (keyCode === 32){
             setCurrWord(prev => prev + 1)
         }
@@ -68,11 +73,13 @@ export default function Body() {
 
     }
 
+
     const handleModeChange = (mode) => {
         setSelectedMode(mode);
     };
 
     useEffect(() => {
+
 
         if (selectedMode === '15s') {
             setTime(15);
@@ -97,13 +104,16 @@ export default function Body() {
 
             setTime(ogTime);
             setWords(100);
+
         }
     }, [selectedMode]);
 
     return (
         <div className='main-content'>
+
             {!started && <Controller onModeChange={handleModeChange} />}
             {selectedMode.endsWith("w") ? <Countword word={currWord} totalWord={words} onKeyDown={handleKeyDown}/> : <Countdown time={seconds} onKeyDown={handleKeyDown} />}
+
 
             <Typing numWords={words} />
         </div>

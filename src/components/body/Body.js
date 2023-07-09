@@ -61,14 +61,14 @@ export default function Body() {
             setTime(120);
             setWords(normal);
         } else if (selectedMode === '60w') {
-            setTime(null);
+            setTime(1000000000);
             setWords(60);
         }
         else if (selectedMode === '120w') {
-            setTime(null);
+            setTime(1000000000);
             setWords(120);
         } else if (selectedMode === '180w') {
-            setTime(null);
+            setTime(1000000000);
             setWords(180);
         }
     }, [selectedMode]);

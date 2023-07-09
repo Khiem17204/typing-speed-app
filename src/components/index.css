@@ -420,8 +420,8 @@
     width: 400px;
     height: 40px;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 0%;
+    transform: translate(-50%, -300%);
 }
 
 .controller-mode{

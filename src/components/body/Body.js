@@ -5,9 +5,10 @@ import Controller from './Controller';
 import { useNavigate } from 'react-router-dom';
 
 export default function Body() {
-    const [seconds, setTime] = useState(0);
-    const [words, setWords] = useState(60);
-    const normal = 60;
+    const [seconds, setTime] = useState(15);
+    const [ogTime, setOgTime] = useState(seconds)
+    const [words, setWords] = useState(25);
+    const normal = 35;
     const [started, setStarted] = useState(false);
     const [selectedMode, setSelectedMode] = useState('');
 
@@ -53,29 +54,32 @@ export default function Body() {
     useEffect(() => {
         if (selectedMode === '30s') {
             setTime(30);
+            setOgTime(30)
             setWords(normal);
         } else if (selectedMode === '60s') {
             setTime(60);
+            setOgTime(60)
             setWords(normal);
         } else if (selectedMode === '120s') {
             setTime(120);
+            setOgTime(120)
             setWords(normal);
         } else if (selectedMode === '60w') {
-            setTime(1000000000);
+            setTime(ogTime);
             setWords(60);
         }
         else if (selectedMode === '120w') {
-            setTime(1000000000);
+            setTime(ogTime);
             setWords(120);
         } else if (selectedMode === '180w') {
-            setTime(1000000000);
+            setTime(ogTime);
             setWords(180);
         }
     }, [selectedMode]);
 
     return (
         <div className='main-content'>
-            <Controller onModeChange={handleModeChange} />
+            {!started && <Controller onModeChange={handleModeChange} />}
             <Countdown time={seconds} onKeyDown={handleKeyDown} />
             <Typing numWords={words} />
         </div>

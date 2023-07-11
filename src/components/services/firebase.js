@@ -22,6 +22,19 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 // google auth signin
 const googleProvider = new GoogleAuthProvider();
+
+// Function to show the loading container
+const showLoading = () => {
+    const loadingContainer = document.getElementsByClassName('loading-container')[0];
+    loadingContainer.style.display = 'flex';
+};
+
+// Function to hide the loading container
+const hideLoading = () => {
+    const loadingContainer = document.getElementsByClassName('loading-container')[0];
+    loadingContainer.style.display = 'none';
+};
+
 const signInWithGoogle = async () => {
     try {
         const res = await signInWithPopup(auth, googleProvider);
@@ -44,10 +57,13 @@ const signInWithGoogle = async () => {
 // login with email and password
 const logInWithEmailAndPassword = async (email, password) => {
     try {
+        showLoading()
         await signInWithEmailAndPassword(auth, email, password);
+        hideLoading()
     } catch (err) {
         console.error(err);
         alert(err.message);
+        hideLoading()
     }
 };
 // register with email
@@ -78,4 +94,6 @@ export {
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     logout,
+    showLoading,
+    hideLoading,    
 };

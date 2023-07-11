@@ -8,12 +8,14 @@ import Login from "./components/Login"
 import Footer from "./components/Footer"
 import Result from "./components/Result"
 import User from "./components/User"
+import Loading from './components/common/Loading';
 
 function App() {
   
     
     return (
       <BrowserRouter>
+        <Loading/>
         <Header />
         <Routes>
           <Route path="/" element={<Body/>} exact/>

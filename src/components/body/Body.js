@@ -2,16 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Countdown from './Countdown';
 import Typing from './Typing';
 import Controller from './Controller';
-import { useNavigate } from 'react-router-dom';
 
 export default function Body() {
     const [seconds, setTime] = useState(0);
     const [words, setWords] = useState(60);
-    const normal = 60;
     const [started, setStarted] = useState(false);
     const [selectedMode, setSelectedMode] = useState('');
-
-    const navigate = useNavigate();
+    const [ended,setEnded] = useState(false);
+    const [mode,setMode] =useState('')
 
     useEffect(() => {
         let interval;
@@ -21,12 +19,11 @@ export default function Body() {
                 setTime(prevTime => {
                     if (prevTime === 0) {
                         clearInterval(interval)
-                        setStarted(false)
-                        navigate("/result")
+                        setStarted(false)        
+                        setEnded(true)              
                         return 0
-                    } else {
-                        return prevTime - 1
-                    }
+                    }         
+                    return prevTime - 1;
                 })
             }, 1000)
         }
@@ -53,23 +50,29 @@ export default function Body() {
     useEffect(() => {
         if (selectedMode === '30s') {
             setTime(30);
-            setWords(normal);
+            setWords(60);
+            setMode("time")
         } else if (selectedMode === '60s') {
             setTime(60);
-            setWords(normal);
+            setWords(60);
+            setMode("time")
         } else if (selectedMode === '120s') {
             setTime(120);
-            setWords(normal);
+            setWords(60);
+            setMode("time")
         } else if (selectedMode === '60w') {
             setTime(1000000000);
-            setWords(60);
+            setWords(10);
+            setMode("word")
         }
         else if (selectedMode === '120w') {
             setTime(1000000000);
             setWords(120);
+            setMode("word")
         } else if (selectedMode === '180w') {
             setTime(1000000000);
             setWords(180);
+            setMode("word")
         }
     }, [selectedMode]);
 
@@ -77,7 +80,8 @@ export default function Body() {
         <div className='main-content'>
             <Controller onModeChange={handleModeChange} />
             <Countdown time={seconds} onKeyDown={handleKeyDown} />
-            <Typing numWords={words} />
+            <Typing numWords={words} seconds ={seconds} selectedMode={selectedMode} started = {started} ended ={ended} mode ={mode}/>
         </div>
     );
 }
+ 

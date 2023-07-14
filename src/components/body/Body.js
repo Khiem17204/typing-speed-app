@@ -2,11 +2,22 @@ import React, { useState, useEffect } from 'react';
 import Countdown from './Countdown';
 import Typing from './Typing';
 import Controller from './Controller';
-
-
 import Countword from './Countword';
 
 import { useNavigate } from 'react-router-dom';
+// <<<<<<< huy
+
+// export default function Body() {
+//     const [seconds, setTime] = useState(0);
+//     const [words, setWords] = useState(60);
+//     const [started, setStarted] = useState(false);
+//     const [selectedMode, setSelectedMode] = useState('');
+//     const [ended,setEnded] = useState(false);
+//     const [mode,setMode] =useState('')
+// =======
+
+
+
 
 export default function Body() {
     const [seconds, setTime] = useState(15);
@@ -16,10 +27,6 @@ export default function Body() {
     const [started, setStarted] = useState(false);
     const [selectedMode, setSelectedMode] = useState('s');
     const [currWord, setCurrWord] = useState(1)
-
-
-
-
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -34,12 +41,11 @@ export default function Body() {
                 setTime(prevTime => {
                     if (prevTime === 0) {
                         clearInterval(interval)
-                        setStarted(false)
-                        navigate("/result")
+                        setStarted(false)        
+                        setEnded(true)              
                         return 0
-                    } else {
-                        return prevTime - 1
-                    }
+                    }         
+                    return prevTime - 1;
                 })
             }, 1000)
         }
@@ -81,6 +87,8 @@ export default function Body() {
     useEffect(() => {
 
 
+
+
         if (selectedMode === '15s') {
             setTime(15);
             setOgTime(15)
@@ -110,12 +118,10 @@ export default function Body() {
 
     return (
         <div className='main-content'>
-
             {!started && <Controller onModeChange={handleModeChange} />}
             {selectedMode.endsWith("w") ? <Countword word={currWord} totalWord={words} onKeyDown={handleKeyDown}/> : <Countdown time={seconds} onKeyDown={handleKeyDown} />}
-
-
             <Typing numWords={words} />
         </div>
     );
 }
+ 

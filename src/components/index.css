@@ -227,6 +227,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-right: 100px;
 }
 
 .wpm > h3,.acc > h3  {
@@ -247,6 +248,7 @@
 
 .graph {
     display: flex;
+    width: 800px;
 }
 
 .horizontal-stat {

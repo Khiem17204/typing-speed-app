@@ -65,27 +65,27 @@ export default function Body() {
 
     useEffect(() => {
         if (selectedMode === '15s') {
+            setTime(15);
+            setOgTime(15)
+            setWords(normal);
+        } else if (selectedMode === '30s') {
             setTime(30);
             setOgTime(30)
             setWords(normal);
-        } else if (selectedMode === '30s') {
-            setTime(60);
-            setOgTime(60)
-            setWords(normal);
         } else if (selectedMode === '45s') {
-            setTime(120);
-            setOgTime(120)
+            setTime(45);
+            setOgTime(45)
             setWords(normal);
         } else if (selectedMode === '25w') {
             setTime(ogTime);
-            setWords(60);
+            setWords(25);
         }
         else if (selectedMode === '50w') {
             setTime(ogTime);
-            setWords(120);
+            setWords(50);
         } else if (selectedMode === '100w') {
             setTime(ogTime);
-            setWords(180);
+            setWords(100);  
         }
     }, [selectedMode]);
 

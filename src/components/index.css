@@ -33,6 +33,11 @@
     text-decoration: none;
 }
 
+.header--title:hover{
+    text-decoration: none;
+    color: #557D8D;
+}
+
 .header--nav{
     display:flex;
     list-style-type: none;
@@ -48,12 +53,13 @@
     
 }
 .user-logo {
+    font-size: x-large;
     display: flex;
     margin-right: 0px;
     color: #444444;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 900px;
+    margin-left: 750px;
 }
 .footer{
     background-color: transparent;
@@ -179,6 +185,7 @@
     font-family:'Roboto Mono', monospace;
     font-size: 15px;
     color: white;
+    cursor: pointer;
 }
 
 /* word */
@@ -415,8 +422,10 @@
     width: 400px;
     height: 40px;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+
+    top: 0%;
+    transform: translate(-50%, -300%);
+
 }
 
 .controller-mode{

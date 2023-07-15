@@ -35,7 +35,7 @@ export default function Body() {
 
 
 
-        if ((started && seconds >= 0 && selectedMode.endsWith("s"))) {
+        if ((started && seconds >= 1 && selectedMode.endsWith("s"))) {
 
 
             interval = setInterval(() => {

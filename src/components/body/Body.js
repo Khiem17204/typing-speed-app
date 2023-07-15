@@ -16,9 +16,6 @@ import { useNavigate } from 'react-router-dom';
 //     const [mode,setMode] =useState('')
 // =======
 
-
-
-
 export default function Body() {
     const [seconds, setTime] = useState(15);
     const [words, setWords] = useState(25);

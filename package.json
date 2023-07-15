@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "chart.js": "^4.3.0",
     "firebase": "^9.23.0",
+    "identicon.js": "^2.3.3",
     "random-words": "^2.0.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",

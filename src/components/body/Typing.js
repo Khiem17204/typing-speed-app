@@ -171,20 +171,28 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
         }
     }
     
-    if (selectedMode === "30s") {
+    if (selectedMode === "15s") {
+        temp = 15 - seconds;
+      } else if (selectedMode === "30s") {
         temp = 30 - seconds;
-      } else if (selectedMode === "60s") {
-        temp = 60 - seconds;
-      } else if (selectedMode === "120s") {
-        temp = 120 - seconds;
+      } else if (selectedMode === "45s") {
+        temp = 45 - seconds;
       } else{
-        temp = 1000000000 - seconds;
+        temp = seconds;
       }
       if (!(temp in resultdata.labels)) {
             const wpm = (allTypeEntries/5)/(temp/60)
             resultdata.labels.push(temp)
             resultdata.wpm.push(wpm)
       }
+      else if ((temp == 1 && temp < Math.max(...resultdata.labels))){
+        const wpm = (allTypeEntries/5)/(temp/60)
+        resultdata.labels = []
+        resultdata.wpm = []
+        resultdata.labels.push(temp)
+        resultdata.wpm.push(wpm)
+      }
+
 
 
     if (seconds === 0 && ended) {

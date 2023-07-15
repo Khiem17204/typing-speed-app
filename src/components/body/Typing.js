@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { generate } from 'random-words'
 import { toBeChecked } from '@testing-library/jest-dom/matchers'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import resultdata from '../resultdata'
 
 
-
-export default function Typing({ numWords }) {
+export default function Typing({ numWords,seconds,selectedMode,started,ended,mode}) {
     const navigate = useNavigate();
 
     const [words, setWords] = useState([])
@@ -13,10 +13,10 @@ export default function Typing({ numWords }) {
     const [char, setChar] = useState("")
     const [currWord, setCurrWord] = useState(0)
     const [currIndex, setCurrIndex] = useState(-1)
-    
-    if (currWord >= numWords) {
-        navigate("/result")
-    }
+    const [allTypeEntries,setallTypeEntries] = useState(0)
+    const [unCorrectedError,setUnCorrectedError] = useState(0)
+    const [correctChar, setCorrectChar] = useState(0)
+    var temp     
 
     useEffect(() => {
         for (let i = 0; i<= currWord; i++){
@@ -69,6 +69,7 @@ export default function Typing({ numWords }) {
             setChar(chr.toLowerCase())
             setCurrInput(Input => [...Input, chr.toLowerCase()])
             setCurrIndex(Index => Index + 1)
+            setallTypeEntries(prev => prev + 1)
         }
 
     };
@@ -135,7 +136,7 @@ export default function Typing({ numWords }) {
     }, [currInput])
 
     useEffect(() => {
-        changeColor()
+        changeColor() 
     }, [currInput])
 
 
@@ -162,12 +163,55 @@ export default function Typing({ numWords }) {
             return "redundant"
         }
         if (words[currWord][currIndex] === char) {
+            setCorrectChar(prev => prev + 1)
             return "correct"
         } else {
+            setUnCorrectedError(prev => prev + 1)
             return "incorrect"
         }
     }
+    
+    if (selectedMode === "30s") {
+        temp = 30 - seconds;
+      } else if (selectedMode === "60s") {
+        temp = 60 - seconds;
+      } else if (selectedMode === "120s") {
+        temp = 120 - seconds;
+      } else{
+        temp = 1000000000 - seconds;
+      }
+      if (!(temp in resultdata.labels)) {
+            const wpm = (allTypeEntries/5)/(temp/60)
+            resultdata.labels.push(temp)
+            resultdata.wpm.push(wpm)
+      }
 
+
+    if (seconds === 0 && ended) {
+        navigate("/result", {
+            replace: true,
+            state: {
+                allTypeEntries: allTypeEntries,
+                unCorrectedError:unCorrectedError,
+                seconds: temp,
+                correctChar: correctChar,
+                type: `time ${selectedMode}`,
+            }
+          });
+    }
+
+    if (currWord >= numWords) {
+        navigate("/result", {
+            replace: true,
+            state: {
+                allTypeEntries: allTypeEntries,
+                unCorrectedError:unCorrectedError,
+                seconds: temp,
+                correctChar: correctChar,
+                type: mode === "word" ? `word ${selectedMode}` : `time ${selectedMode}`,
+            }
+          });
+    }
 
     return (
         <div>

@@ -3,34 +3,50 @@ import Countdown from './Countdown';
 import Typing from './Typing';
 import Controller from './Controller';
 import Countword from './Countword';
+
 import { useNavigate } from 'react-router-dom';
+// <<<<<<< huy
+
+// export default function Body() {
+//     const [seconds, setTime] = useState(0);
+//     const [words, setWords] = useState(60);
+//     const [started, setStarted] = useState(false);
+//     const [selectedMode, setSelectedMode] = useState('');
+//     const [ended,setEnded] = useState(false);
+//     const [mode,setMode] =useState('')
+// =======
+
+
+
 
 export default function Body() {
     const [seconds, setTime] = useState(15);
     const [ogTime, setOgTime] = useState(seconds)
     const [words, setWords] = useState(25);
     const normal = 25;
+    const [ended,setEnded] = useState(false);
     const [started, setStarted] = useState(false);
-    const [selectedMode, setSelectedMode] = useState('s');
+    const [selectedMode, setSelectedMode] = useState('15s');
     const [currWord, setCurrWord] = useState(1)
-
-
     const navigate = useNavigate();
 
     useEffect(() => {
         let interval;
 
+
+
         if ((started && seconds >= 0 && selectedMode.endsWith("s"))) {
+
+
             interval = setInterval(() => {
                 setTime(prevTime => {
                     if (prevTime === 0) {
                         clearInterval(interval)
-                        setStarted(false)
-                        navigate("/result")
+                        setStarted(false)        
+                        setEnded(true)              
                         return 0
-                    } else {
-                        return prevTime - 1
-                    }
+                    }         
+                    return prevTime - 1;
                 })
             }, 1000)
         }
@@ -46,6 +62,8 @@ export default function Body() {
         if (!started && keyCode >= 65 && keyCode <= 90) {
             setStarted(true)
         }
+
+
         if (keyCode === 32){
             setCurrWord(prev => prev + 1)
         }
@@ -59,11 +77,16 @@ export default function Body() {
             window.removeEventListener('keydown', handleKeyDown);
         };
     }, [currWord]);
+
     const handleModeChange = (mode) => {
         setSelectedMode(mode);
     };
 
     useEffect(() => {
+
+
+
+
         if (selectedMode === '15s') {
             setTime(15);
             setOgTime(15)
@@ -84,8 +107,10 @@ export default function Body() {
             setTime(ogTime);
             setWords(50);
         } else if (selectedMode === '100w') {
+
             setTime(ogTime);
-            setWords(100);  
+            setWords(100);
+
         }
     }, [selectedMode]);
 
@@ -97,3 +122,4 @@ export default function Body() {
         </div>
     );
 }
+ 

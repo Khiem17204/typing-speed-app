@@ -14,13 +14,13 @@ export default function Controller({ onModeChange }) {
       <div className='controller-mode'>
 
 
-        <button className='controller-mode-button' onClick={() => handleModeChange('30s')} disabled={selectedMode === '15s'}>
+        <button className='controller-mode-button' onClick={() => handleModeChange('15s')} disabled={selectedMode === '15s'}>
           15
         </button>
-        <button className='controller-mode-button' onClick={() => handleModeChange('60s')} disabled={selectedMode === '30s'}>
+        <button className='controller-mode-button' onClick={() => handleModeChange('30s')} disabled={selectedMode === '30s'}>
           30
         </button>
-        <button className='controller-mode-button' onClick={() => handleModeChange('120s')} disabled={selectedMode === '45s'}>
+        <button className='controller-mode-button' onClick={() => handleModeChange('45s')} disabled={selectedMode === '45s'}>
           45
 
 
@@ -30,13 +30,13 @@ export default function Controller({ onModeChange }) {
       <div className='controller-mode'>
 
 
-        <button className='controller-mode-button' onClick={() => handleModeChange('60w')} disabled={selectedMode === '25w'}>
+        <button className='controller-mode-button' onClick={() => handleModeChange('25w')} disabled={selectedMode === '25w'}>
           25
         </button>
-        <button className='controller-mode-button' onClick={() => handleModeChange('120w')} disabled={selectedMode === '50w'}>
+        <button className='controller-mode-button' onClick={() => handleModeChange('50w')} disabled={selectedMode === '50w'}>
           50
         </button>
-        <button className='controller-mode-button' onClick={() => handleModeChange('180w')} disabled={selectedMode === '100w'}>
+        <button className='controller-mode-button' onClick={() => handleModeChange('100w')} disabled={selectedMode === '100w'}>
           100
         </button>
       </div>

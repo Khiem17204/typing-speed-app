@@ -21,7 +21,7 @@ ChartJS.register(
 
 export default function Result() {
     const location = useLocation();
-    const wpm = Math.floor(((location.state.allTypeEntries/5) - location.state.unCorrectedError)/(location.state.seconds/60))
+    const wpm = Math.max(Math.floor(((location.state.allTypeEntries/5) - location.state.unCorrectedError)/(location.state.seconds/60)), 0)
     const acc = Math.floor((location.state.correctChar/location.state.allTypeEntries) * 100)
     const raw = Math.floor((location.state.allTypeEntries/5)/(location.state.seconds/60))
     console.log(resultdata.labels)
@@ -30,9 +30,9 @@ export default function Result() {
         labels: resultdata.labels,
         datasets: [{
             data: resultdata.wpm,
-            backgroundColor: "aqua",
-            borderColor: 'white',
-            pointBorderColor: 'aqua',
+            backgroundColor: "#557D8D",
+            borderColor: '#557D8D',
+            pointBorderColor: '#557D8D',
         }]
     }
     const options = {
@@ -44,7 +44,8 @@ export default function Result() {
                 min:1
             },
             y: {
-                max: 80,
+                max: Math.floor(Math.max(...resultdata.wpm)/10) * 10 + 10,
+                min: Math.floor(Math.min(...resultdata.wpm)/10) * 10 - 10
             }
         
         },
@@ -96,7 +97,6 @@ export default function Result() {
             </div>
             <div className='text'>
                 <p><a href='/login' class="grey-sign-in">Sign in</a> to save your result</p>
-
                 <p><a href='/login' class="grey-sign-in">Sign in</a> to save your result</p>
                 <div className='icon'>
                     <a href="/" class="icon-block"><i class="fa-solid fa-angle-right"></i></a>

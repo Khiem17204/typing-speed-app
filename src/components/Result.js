@@ -1,5 +1,7 @@
+
 import {React, useState, useEffect} from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+
 import photo from "../assets/image.png"
 import {Line} from "react-chartjs-2"
 import {
@@ -10,6 +12,7 @@ import {
     PointElement,
 } from 'chart.js';
 import resultdata from './resultdata'
+
 import {auth, db} from './services/firebase'
 import {doc,
         collection,
@@ -19,11 +22,13 @@ import {doc,
         updateDoc,
         where, array} from 'firebase/firestore'
 import { useAuthState } from "react-firebase-hooks/auth";
+
 ChartJS.register(
     LineElement,
     CategoryScale,
     LinearScale,
     PointElement,
+
 )  
 
 export default function Result() {
@@ -61,6 +66,7 @@ export default function Result() {
             },
             y: {
                 max: Math.floor(Math.max(...resultdata.wpm)/10) * 10 + 10,
+
                 min: 0
             }
         
@@ -94,17 +100,20 @@ export default function Result() {
             sendData()
         }
     }, [user])
+
     return (
         <div className='result'>
             <div className='summary'>
                 <div className='vertical-stat'>
                     <div className='wpm'>
                         <h3>wpm</h3>
+
                         <h1 style={{color:"#557D8D"}}>{wpm}</h1>
                     </div>
                     <div className='acc'>
                         <h3>acc</h3>
                         <h1 style={{color:"#557D8D"}}>{acc}%</h1>
+
                     </div>
                 </div>
                 <div className='graph'>
@@ -119,7 +128,9 @@ export default function Result() {
                     <li className='stat'>
                         <h5>test type</h5>
                         <h6>{location.state.type}</h6>
+
                         <h6> english</h6>
+
                     </li>
                     <li className='stat'>
                         <h5>raw</h5>
@@ -140,7 +151,9 @@ export default function Result() {
                 </ul>
             </div>
             <div className='text'>
+
                 {!user ? <p><a href='/login' class="grey-sign-in">Sign in</a> to save your result</p> : ""}
+
                 <div className='icon'>
                     <a href="/" class="icon-block"><i class="fa-solid fa-angle-right"></i></a>
                     <a href="/" class="icon-block"><i class="fa-solid fa-arrows-rotate"></i></a>

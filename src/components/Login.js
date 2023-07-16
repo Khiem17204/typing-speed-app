@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+
 import { registerWithEmailAndPassword, auth, logInWithEmailAndPassword, signInWithGoogle, showLoading, hideLoading } from "./services/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from 'react-router-dom';
@@ -40,6 +41,7 @@ export default function Login() {
         if (!regeEmail) alert("Please enter email")
         if (!regePassword) alert("Please enter password")
         registerWithEmailAndPassword(regeName, regeEmail, regePassword);
+
     };
 
     //login
@@ -75,7 +77,9 @@ export default function Login() {
                 <input className="register-box" placeholder='password' type='password' value={password} onChange={(e) => setPassword(e.target.value)}></input><br></br>
                 <input type="checkbox" id="remember-me" className="remember-me"></input>
                 <label for="remember-me">Remember me</label>
+
                 <button className="auth-button" onClick={signinViaMail}><i class="fa fa-sign-in" ></i> <span>Sign In</span></button><br></br>
+
                 <p style={{ marginLeft: "110px" }}> or </p>
                 <button className="auth-button" onClick={signInWithGoogle}><i class="fa fa-google"></i> Google Sign In</button><br></br>
 

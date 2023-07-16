@@ -24,7 +24,9 @@ const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
     try {
+
         const date = new Date().toUTCString().slice(5, 16)
+
         const res = await signInWithPopup(auth, googleProvider);
         const user = res.user;
         const q = query(collection(db, "users"), where("uid", "==", user.uid));
@@ -36,6 +38,7 @@ const signInWithGoogle = async () => {
                 authProvider: "google",
                 email: user.email,
                 joined: date,
+
             });
         }
     } catch (err) {
@@ -43,6 +46,7 @@ const signInWithGoogle = async () => {
         alert(err.message);
     }
 };
+
 
 // Function to show the loading container
 const showLoading = () => {
@@ -66,6 +70,7 @@ const logInWithEmailAndPassword = async (email, password) => {
         console.error(err);
         alert(err.message);
         hideLoading()
+
     }
 };
 // register with email
@@ -80,9 +85,11 @@ const registerWithEmailAndPassword = async (name, email, password) => {
             name,
             authProvider: "local",
             email,
+
             joined: date,
         });
         hideLoading()
+
     } catch (err) {
         console.error(err);
         alert(err.message);
@@ -103,4 +110,5 @@ export {
     logout,
     showLoading,
     hideLoading,
+
 };

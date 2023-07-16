@@ -59,7 +59,9 @@
     color: #444444;
     margin-top: auto;
     margin-bottom: auto;
+
     margin-left: 650px;
+
 }
 .footer{
     background-color: transparent;
@@ -74,6 +76,19 @@
     width: 100%;
     
     /* box-shadow: 1px 1px #c9c9c9;? */
+}
+
+/* main screen */
+.main-content{
+    font-family: 'Roboto Mono', monospace;
+    box-sizing: border-box;
+    align-items: center;
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 32px;
+    margin-top: 150px;
 }
 
 /* main screen */
@@ -306,11 +321,13 @@
 }
 
 .user-info {
+
     background-color: #171717;
     padding: 10px;
     margin-left: 150px;
     margin-right: 20px;
     border-radius: 10px;
+
     font-family:'Roboto Mono', monospace;
 }
 
@@ -324,8 +341,10 @@
     display: flex;
     width: 100px;
     height: 100px;
+
     margin-right: 10px;
     image-rendering: pixelated;
+
 }
 .circle-photo {
     border-radius: 50%;
@@ -334,8 +353,10 @@
 }
 .user-name {
     color: white;
+
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
+
 }
 
 .test-started ul {
@@ -345,11 +366,13 @@
 }
 
 .user-stat {
+
     background-color: #171717;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
     height: 250px;
+
 }
 
 .date-nav ul {
@@ -386,19 +409,23 @@
 
 .mode-data-blocks{
     background-color: #44444450;
+
     display: flex;
     margin-right: 10px;
     margin-left: 10px;
     border-radius: 10px;
     justify-content: center;
+
     margin-top: 0px;
 }
 
 .mode-data-blocks ul {
+
     list-style-type: none;
     font-family:'Roboto Mono', monospace;
     color:#EEEEEE ;
     font-size: 20px;
+
     margin-left:10px;
 }
 
@@ -408,6 +435,7 @@
     margin-left: 10px;
     margin-right: 60px;
     text-align: center;
+
 }
 
 .share-button {
@@ -458,6 +486,7 @@
 .controller-mode-button:disabled{
     font-weight: bolder;
     font-size: medium;
+
 }
 
 
@@ -536,3 +565,4 @@
     border-radius: 18px;
     border: 1px solid #cfcece;
   }
+

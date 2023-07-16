@@ -1,3 +1,4 @@
+
 import photo from "../assets/favicon.png"
 import React, { useState, useEffect } from 'react';
 import Popup from "reactjs-popup";
@@ -63,23 +64,25 @@ export default function User() {
     var icon = "data:image/png;base64," + data;
     
      
-
     return (
         <div className='user'>
             <div className='user-info'>
                 <div className='username'>
                     <div className='user-photo'>
+
                         <img src={icon} className="circle-photo" />
 
                     </div>
                     <div className='user-name'>
                         <h2>{userData.name}</h2>
                         <h6>Joined {userData.joined} </h6>
+
                     </div>
                 </div>
                 <div className='test-started'>
                     <ul>
                         <li>
+
                             <h4>Test Started</h4>
                             <h3>0</h3>
                         </li>
@@ -91,11 +94,13 @@ export default function User() {
                     <Popup modal trigger={<button><i className="fa-solid fa-pen"></i></button>}>
                                 {close => <UserEdit close={close} />}
                             </Popup>
+
                 </div>
             </div>
             <div className='user-stat'>
                 <div className='date-nav'>
                     <ul>
+
                         <li style={{color:"#557D8D"}}>filters</li>
                         <li className='date-nav-black'>day</li>
                         <li className='date-nav-black'>week</li>
@@ -134,6 +139,7 @@ export default function User() {
                             </li>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </div>

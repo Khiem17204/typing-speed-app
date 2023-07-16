@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
 import Logo from '../assets/favicon.png';
+
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -14,6 +15,7 @@ export default function Header() {
   const auth = getAuth();
   const navigate = useNavigate();
 
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
@@ -24,6 +26,7 @@ export default function Header() {
       unsubscribe();
     };
   }, [auth]);
+
 
   const handleSignOut = () => {
     signOut(auth)
@@ -53,6 +56,7 @@ useEffect(()=> {
 }, [user])
 
 
+
   return (
     <header className="header">
       <img className="header--logo" src={Logo} alt="Logo" />
@@ -66,6 +70,7 @@ useEffect(()=> {
         </>
       ) : (
         <Link to="/login" className="user-logo" style={{textDecoration:"none"}}>
+
           <i className="fa-solid fa-user"></i>
         </Link>
       )}

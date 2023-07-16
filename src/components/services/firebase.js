@@ -71,6 +71,7 @@ const logInWithEmailAndPassword = async (email, password) => {
 // register with email
 const registerWithEmailAndPassword = async (name, email, password) => {
     try {
+        showLoading()
         const date = new Date().toUTCString().slice(5, 16)
         const res = await createUserWithEmailAndPassword(auth, email, password);
         const user = res.user;
@@ -81,6 +82,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
             email,
             joined: date,
         });
+        hideLoading()
     } catch (err) {
         console.error(err);
         alert(err.message);

@@ -19,7 +19,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Body() {
     const [seconds, setTime] = useState(15);
     const [words, setWords] = useState(25);
-    const normal = 15;
+    const normal = 25;
     const [ended,setEnded] = useState(false);
     const [started, setStarted] = useState(false);
     const [selectedMode, setSelectedMode] = useState('15s');
@@ -76,10 +76,6 @@ export default function Body() {
     };
 
     useEffect(() => {
-
-
-
-
         if (selectedMode === '15s') {
             setTime(15);
             setWords(normal);

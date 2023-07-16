@@ -16,6 +16,8 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
     const [allTypeEntries,setallTypeEntries] = useState(0)
     const [unCorrectedError,setUnCorrectedError] = useState(0)
     const [correctChar, setCorrectChar] = useState(0)
+    const [startWordIndex, setStartWordIndex] = useState(0);
+    const [endWordIndex, setEndWordIndex] = useState(25);
     var temp     
 
     useEffect(() => {
@@ -74,6 +76,12 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
 
     };
 
+    useEffect(() => {
+        if (currWord >= 7 && currWord % 7 === 0) {
+          setStartWordIndex((prevStartIndex) => prevStartIndex + 7);
+          setEndWordIndex((prevEndIndex) => prevEndIndex + 7);
+        }
+      }, [currWord]);
 
     function injectExtraWords(words, currIndex, currWord, currInput, char) {
         let space = document.createElement("span")
@@ -171,16 +179,6 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
         }
     }
     
-<<<<<<< HEAD
-    if (selectedMode === "30s") {
-        temp = 30 - seconds;
-      } else if (selectedMode === "60s") {
-        temp = 60 - seconds;
-      } else if (selectedMode === "120s") {
-        temp = 120 - seconds;
-      } else{
-        temp = 1000000000 - seconds;
-=======
     if (selectedMode === "15s") {
         temp = 15 - seconds;
       } else if (selectedMode === "30s") {
@@ -189,15 +187,12 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
         temp = 45 - seconds;
       } else{
         temp = seconds;
->>>>>>> 755af2335e330505af37af7d6c5fd324fddcfab8
       }
       if (!(temp in resultdata.labels)) {
             const wpm = (allTypeEntries/5)/(temp/60)
             resultdata.labels.push(temp)
             resultdata.wpm.push(wpm)
       }
-<<<<<<< HEAD
-=======
       else if ((temp == 1 && temp < Math.max(...resultdata.labels))){
         const wpm = (allTypeEntries/5)/(temp/60)
         resultdata.labels = []
@@ -206,7 +201,6 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
         resultdata.wpm.push(wpm)
       }
 
->>>>>>> 755af2335e330505af37af7d6c5fd324fddcfab8
 
 
     if (seconds === 0 && ended) {
@@ -239,13 +233,14 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
         <div>
             <div className='typing--section'>
                 <div className="prompt">
-                    {words.map((word, i) => (<span key={i} id={`${i}`}>
+                    {words.slice(startWordIndex, endWordIndex).map((word, i) => (<span key={i} id={`${i}`}>
 
                         {word.split("").map((char, idx) => (
                             <>
                                 <span key={idx} id={`${i}-${idx}`} className="word-unrendered" onKeyDown={handleKeyDown}>{char}</span>
                                 {/* < Character class= */}
                             </>
+                            
 
                         ))}
                         <span> </span>

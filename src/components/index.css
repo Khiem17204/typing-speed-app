@@ -1,3 +1,4 @@
+
 /* header and bottom */
 .header{
     background-color: transparent;
@@ -63,16 +64,14 @@
 }
 .footer{
     background-color: transparent;
-    min-height: 100px;
+    /* min-height: 100px; */
     display: flex;
-    position: fixed;
+    position: absolute;
     font-size: 100;
     color: white; 
-    padding: 0px 10px 0px 10px;
+    padding: 0px 0px 0px 0px;
     left: 200px;
-    bottom: 0px;
-    width: 100%;
-    
+    bottom: 30px;
     /* box-shadow: 1px 1px #c9c9c9;? */
 }
 
@@ -341,7 +340,6 @@
 .test-started ul {
     list-style-type: none;
     color:#EEEEEE ;
-    font-size: 20px;
 }
 
 .user-stat {
@@ -370,7 +368,7 @@
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 5px;
-    width: 178px;
+    width: 173px;
     height: 25px;
     text-align: center;
 }
@@ -391,35 +389,33 @@
     margin-left: 10px;
     border-radius: 10px;
     justify-content: center;
-    margin-top: 0px;
+    margin-top: 20px;
 }
+
 
 .mode-data-blocks ul {
     list-style-type: none;
     font-family:'Roboto Mono', monospace;
     color:#EEEEEE ;
-    font-size: 20px;
-    margin-left:10px;
+    font-size: 0px;
+    margin-left:0px;
 }
 
 .mode-data-blocks ul li {
     display: inline-block;
     justify-content: center;
     margin-left: 10px;
-    margin-right: 60px;
+    margin-right: 40px;
     text-align: center;
 }
 
-.share-button {
-    margin-left: 800px;
-    margin-top: 20px;
-}
-.share-button button {
-    background-color:#171717;
+.user-best-chart{
+    color: #ff7a9084;
+    background-color: #44444450;
+    width: 100%;
+    height: 330px;
     border-radius: 10px;
-    border: none;
-    color: #EEEEEE;
-    padding: 13px;
+    margin-top: 20px;
 }
 .controller-wrapper{
     font-family: "Roboto Mono";
@@ -497,42 +493,91 @@
 /* // Te */
 
 
-.modal {
+.update-info {
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+    width: 500px;
     font-size: 12px;
-    background-color: blue;
-    color:red
+    background-color: #171717;
+    color:#557D8D;
+    border-radius: 10px;
   }
-.modal > .header {
-    background-color: green;
-    color: red;
-    width: 100%;
-    border-bottom: 1px solid gray;
-    font-size: 18px;
-    text-align: center;
-    padding: 5px;
-  }
-.modal > .content {
-    width: 100%;
-    padding: 10px 5px;
-  }
-  .modal > .actions {
-    margin: auto;
-  }
-  .modal > .actions {
-    width: 100%;
-    padding: 10px 5px;
-    text-align: center;
-  }
-.modal > .close {
+.update-info > .close {
     cursor: pointer;
     position: absolute;
     display: block;
     padding: 2px 5px;
     line-height: 20px;
-    right: -10px;
-    top: -10px;
+    right: 10px;
+    top: 10px;
     font-size: 24px;
-    background: #ffffff;
+    background: transparent;
     border-radius: 18px;
-    border: 1px solid #cfcece;
+    color:white
   }
+.info-box{
+    width: 240px;
+    height: 36px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+    border: none;
+    text-indent: 10px;
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+}
+.update-info > .title{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.update-info > .bio{
+    width: 450px;
+    height: 100px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+    border: none;
+    text-indent: 10px;
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+}
+
+.update-info > .submit-button{
+    background-color: rgba(0, 0, 0, 0.367);
+    width: 480px;
+    height:36px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border:none;
+    font-family:'Roboto Mono', monospace;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.update-info-on{
+    background-color: rgba(0, 0, 0, 0.367);
+    width:100%;
+    height:36px;
+    border-radius: 5px;
+    border:none;
+    font-family:'Roboto Mono', monospace;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto
+}

@@ -1,6 +1,5 @@
 import {React, useState, useEffect} from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import photo from "../assets/image.png"
 import {Line} from "react-chartjs-2"
 import {
     Chart as ChartJS,
@@ -84,9 +83,19 @@ export default function Result() {
         })
         const userDoc = doc(db, "users", id)
         if(data.hasOwnProperty(mode)){
+            if (wpm > Math.max(...data[mode])){
+                data["best-wpm "+mode] = resultdata.wpm
+                data["best-labels " +mode] =resultdata.labels
+            }
             data[mode].push(wpm)
-        }else{data[mode] = [wpm]} 
-
+        }else{
+            data[mode] = [wpm]
+            data["best-wpm "+mode] = resultdata.wpm
+            data["best-labels " +mode] =resultdata.labels
+        }
+        if(data.hasOwnProperty("completed")){
+            data["completed"] = data["completed"] +1
+        }else{data["completed"] =1}
         await updateDoc(userDoc, data)
     }
     useEffect(() => {

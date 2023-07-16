@@ -4,18 +4,17 @@ import Typing from './Typing';
 import Controller from './Controller';
 import Countword from './Countword';
 
+import {auth, db} from '../services/firebase'
+import {doc,
+        collection,
+        addDoc,
+        getDocs,
+        query,
+        updateDoc,
+        where, array} from 'firebase/firestore'
+import { useAuthState } from "react-firebase-hooks/auth";
+
 import { useNavigate } from 'react-router-dom';
-// <<<<<<< huy
-
-// export default function Body() {
-//     const [seconds, setTime] = useState(0);
-//     const [words, setWords] = useState(60);
-//     const [started, setStarted] = useState(false);
-//     const [selectedMode, setSelectedMode] = useState('');
-//     const [ended,setEnded] = useState(false);
-//     const [mode,setMode] =useState('')
-// =======
-
 export default function Body() {
     const [seconds, setTime] = useState(15);
     const [words, setWords] = useState(25);
@@ -24,7 +23,30 @@ export default function Body() {
     const [started, setStarted] = useState(false);
     const [selectedMode, setSelectedMode] = useState('15s');
     const [currWord, setCurrWord] = useState(1)
+    const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate();
+
+    const sendData = async () => {
+        const q = query(collection(db, "users"), where("uid", "==", user?.uid))
+        var id = null
+        var data = null
+        await getDocs(q)
+            .then((snapshot) => {
+                id = snapshot.docs[0].id;
+                data = snapshot.docs[0].data();
+        })
+        const userDoc = doc(db, "users", id)
+        
+        if(data.hasOwnProperty("started")){
+            data["started"] = data["started"] +1
+        }else{data["started"] =1}
+        await updateDoc(userDoc, data)
+    }
+    useEffect(() => {
+        if (user && started){
+            sendData()
+        }
+    }, [user])
 
     useEffect(() => {
         let interval;

@@ -23,7 +23,7 @@ function App() {
             <Route exact path='/user' element={<User/>}/>
           </Route>
         </Routes>
-        <Footer />
+        <Footer/>
       </BrowserRouter>
     );
   }

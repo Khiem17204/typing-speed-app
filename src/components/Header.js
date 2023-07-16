@@ -66,7 +66,7 @@ useEffect(()=> {
         </>
       ) : (
         <Link to="/login" className="user-logo" style={{textDecoration:"none"}}>
-          <i className="fa-solid fa-user"></i>
+          <i className="fa-solid fa-sign-in"></i>
         </Link>
       )}
     </header>

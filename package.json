@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "chart.js": "^4.3.0",
     "firebase": "^9.23.0",
+    "identicon.js": "^2.3.3",
     "random-words": "^2.0.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
@@ -16,6 +17,7 @@
     "react-firebase-hooks": "^5.1.1",
     "react-router-dom": "^6.14.0",
     "react-scripts": "5.0.1",
+    "reactjs-popup": "^2.0.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

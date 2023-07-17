@@ -24,6 +24,7 @@ const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
     try {
+        const date = new Date().toUTCString().slice(5, 16)
         const res = await signInWithPopup(auth, googleProvider);
         const user = res.user;
         const q = query(collection(db, "users"), where("uid", "===", user.uid));
@@ -34,6 +35,7 @@ const signInWithGoogle = async () => {
                 name: user.displayName,
                 authProvider: "google",
                 email: user.email,
+                joined: date,
             });
         }
     } catch (err) {
@@ -41,18 +43,36 @@ const signInWithGoogle = async () => {
         alert(err.message);
     }
 };
+
+// Function to show the loading container
+const showLoading = () => {
+    const loadingContainer = document.getElementsByClassName('loading-container')[0];
+    loadingContainer.style.display = 'flex';
+};
+
+// Function to hide the loading container
+const hideLoading = () => {
+    const loadingContainer = document.getElementsByClassName('loading-container')[0];
+    loadingContainer.style.display = 'none';
+};
+
 // login with email and password
 const logInWithEmailAndPassword = async (email, password) => {
     try {
+        showLoading()
         await signInWithEmailAndPassword(auth, email, password);
+        hideLoading()
     } catch (err) {
         console.error(err);
         alert(err.message);
+        hideLoading()
     }
 };
 // register with email
 const registerWithEmailAndPassword = async (name, email, password) => {
     try {
+        showLoading()
+        const date = new Date().toUTCString().slice(5, 16)
         const res = await createUserWithEmailAndPassword(auth, email, password);
         const user = res.user;
         await addDoc(collection(db, "users"), {
@@ -60,7 +80,9 @@ const registerWithEmailAndPassword = async (name, email, password) => {
             name,
             authProvider: "local",
             email,
+            joined: date,
         });
+        hideLoading()
     } catch (err) {
         console.error(err);
         alert(err.message);
@@ -71,6 +93,7 @@ const logout = () => {
     signOut(auth);
 };
 
+
 export {
     auth,
     db,
@@ -78,4 +101,6 @@ export {
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     logout,
+    showLoading,
+    hideLoading,
 };

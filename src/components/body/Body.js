@@ -36,7 +36,7 @@ export default function Body() {
                 data = snapshot.docs[0].data();
         })
         const userDoc = doc(db, "users", id)
-        
+
         if(data.hasOwnProperty("started")){
             data["started"] = data["started"] +1
         }else{data["started"] =1}
@@ -46,7 +46,7 @@ export default function Body() {
         if (user && started){
             sendData()
         }
-    }, [user])
+    }, [user, started])
 
     useEffect(() => {
         let interval;
@@ -55,10 +55,10 @@ export default function Body() {
                 setTime(prevTime => {
                     if (prevTime === 0) {
                         clearInterval(interval)
-                        setStarted(false)        
-                        setEnded(true)              
+                        setStarted(false)
+                        setEnded(true)
                         return 0
-                    }         
+                    }
                     return prevTime - 1;
                 })
             }, 1000)
@@ -121,13 +121,12 @@ export default function Body() {
     }, [selectedMode]);
 
     return (
-        
+
         <div className='main-content'>
             {!started && <Controller onModeChange={handleModeChange} />}
             {selectedMode.endsWith("w") ? <Countword word={currWord} totalWord={words} onKeyDown={handleKeyDown}/> : <Countdown time={seconds} onKeyDown={handleKeyDown} />}
             <Typing numWords={words} seconds={seconds} selectedMode={selectedMode} started={started} ended={ended} mode={selectedMode.endsWith("w") ? "word" : "time"} />
         </div>
-        
+
     );
 }
- 

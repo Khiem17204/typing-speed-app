@@ -94,7 +94,7 @@ Welcome to our cutting-edge Typing Test Web! We are thrilled to present a fun an
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/Khiem17204/typing-speed-app.git
    ```
 2. Install NPM packages
    ```sh
@@ -191,7 +191,7 @@ Project Link: [https://github.com/Khiem17204/typing-speed-app](https://github.co
 [license-url]: https://github.com/Khiem17204/typing-speed-app/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: src/assets/Screen%20Shot%202023-06-27%20at%209.53.12%20PM.png
+[product-screenshot]: src/assets/Screen%20Shot%202023-07-17%20at%2011.55.40%20PM.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB

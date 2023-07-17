@@ -49,7 +49,7 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#our-team">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -156,13 +156,11 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- CONTACT -->
-## Contact
+## Our Team
 
-Your Name - [@fb_handle](https://www.facebook.com/caogia.huy.332/) - caogiahuy615@gmail.com
+Khiem Le*, Trung Dang*, Huy Cao, and Tung Nguyen are sophomores at the University of Massachusetts Amherst. They have been working on TypingRace from June 2023 to July 2023. The project is maintained on Khiem's public repository and is open for public contributions. Interested individuals can reach out to Khiem at ktle@umass.edu, to Trung at trungdangminh14012004@gmail.com, to Huy at [], and to Tung at [].
 
-Project Link: [https://github.com/Khiem17204/typing-speed-app](https://github.com/Khiem17204/typing-speed-app)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+_(*) indicates an equivalent contribution to the project. Marked individuals maintain the right to first author the project_
 
 
 

@@ -8,11 +8,9 @@ import Login from "./components/Login"
 import Footer from "./components/Footer"
 import Result from "./components/Result"
 import User from "./components/User"
-import Loading from './components/common/Loading';
-
-function App() {
-  
-    
+import Loading from "./components/common/Loading"
+import ProtectedRoute from "./components/ProtectedRoute"
+function App() {    
     return (
       <BrowserRouter>
         <Loading/>
@@ -21,9 +19,11 @@ function App() {
           <Route path="/" element={<Body/>} exact/>
           <Route path="/login" element={<Login/>} />
           <Route path="/result" element={<Result/>} />
-          <Route path='/user' element ={<User/>} />
+          <Route exact path='/user' element={<ProtectedRoute/>}>
+            <Route exact path='/user' element={<User/>}/>
+          </Route>
         </Routes>
-        <Footer />
+        <Footer/>
       </BrowserRouter>
     );
   }

@@ -5,7 +5,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -71,8 +70,7 @@ Welcome to our cutting-edge Typing Test Web! We are thrilled to present a fun an
 
 ### Built With
 
-* [![React][React.js]][React-url]
-* []
+![js][javascript] [![React][React.js]][React-url] ![nodejs][nodejs] ![firebase][firebase] ![html5][html5] ![tailwind][tailwind] ![CSS][CSS] ![chartjs][chartjs] ![bootstrap][bootstrap] ![github][github]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -85,7 +83,7 @@ Welcome to our cutting-edge Typing Test Web! We are thrilled to present a fun an
 
 ### Prerequisites
 
-* npm
+npm
   ```sh
   npm install npm@latest -g
   ```
@@ -120,7 +118,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [ ] Add customizable design 
-- [ ] Add more mode
+- [ ] Add Racing Mode
 - [ ] Multi-language Support
     - [ ] Vietnamese
 
@@ -188,23 +186,16 @@ Project Link: [https://github.com/Khiem17204/typing-speed-app](https://github.co
 [issues-shield]: https://img.shields.io/github/issues/Khiem17204/typing-speed-app.svg?style=for-the-badge
 [issues-url]: https://github.com/Khiem17204/typing-speed-app/issues
 [license-shield]: https://img.shields.io/github/license/Khiem17204/typing-speed-app.svg?style=for-the-badge
-[license-url]: https://github.com/Khiem17204/typing-speed-app/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[license-url]: https://github.com/Khiem17204/typing-speed-app/blob/main/LICENSE.txt
 [product-screenshot]: src/assets/Screen%20Shot%202023-07-17%20at%2011.55.40%20PM.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+[github]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+[javascript]: https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
+[nodejs]: https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white
+[chartjs]: https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white
+[html5]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[tailwind]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[css]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[bootstrap]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[firebase]: https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=white

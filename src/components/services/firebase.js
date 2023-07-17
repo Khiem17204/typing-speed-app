@@ -23,18 +23,6 @@ const db = getFirestore(app);
 // google auth signin
 const googleProvider = new GoogleAuthProvider();
 
-// Function to show the loading container
-const showLoading = () => {
-    const loadingContainer = document.getElementsByClassName('loading-container')[0];
-    loadingContainer.style.display = 'flex';
-};
-
-// Function to hide the loading container
-const hideLoading = () => {
-    const loadingContainer = document.getElementsByClassName('loading-container')[0];
-    loadingContainer.style.display = 'none';
-};
-
 const signInWithGoogle = async () => {
     try {
         const date = new Date().toUTCString().slice(5, 16)
@@ -114,4 +102,6 @@ export {
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     logout,
+    showLoading,
+    hideLoading,
 };

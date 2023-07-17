@@ -2,8 +2,28 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { registerWithEmailAndPassword, auth, logInWithEmailAndPassword, signInWithGoogle, showLoading, hideLoading } from "./services/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+    const navigate = useNavigate()
+    const [user, loading, error] = useAuthState(auth);
+    useEffect(() => {
+        if (loading){
+            showLoading();
+        }else{
+            hideLoading();
+        }
+
+        if (user) {
+            hideLoading();
+            navigate("/user")
+        }
+        if (error){
+            console.log(error)
+        }
+    }, [loading,user,error,navigate])
+
+
     //register
     const [regeEmail, setRegeEmail] = useState("");
     const [regePassword, setRegePassword] = useState("");

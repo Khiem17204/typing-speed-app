@@ -57,8 +57,8 @@ export default function Login() {
         <div className="auth">
             <div className="register">
                 <h4>Register</h4>
-
-                <input className="register-box" placeholder='username' value={regeName} onChange={(e) => setRegeName(e.target.value)}></input>
+                
+                <input className="register-box" placeholder='username' value={regeName} onChange={(e) => setRegeName(e.target.value)} ></input>    
                 <input className="register-box" placeholder='email' value={regeEmail} onChange={(e) => setRegeEmail(e.target.value)}></input>
                 <input className="register-box" placeholder='verify email'></input>
                 {/* add basic verification if not match */}

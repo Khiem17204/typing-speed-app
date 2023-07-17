@@ -16,6 +16,8 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
     const [allTypeEntries,setallTypeEntries] = useState(0)
     const [unCorrectedError,setUnCorrectedError] = useState(0)
     const [correctChar, setCorrectChar] = useState(0)
+    const [startWordIndex, setStartWordIndex] = useState(0);
+    const [endWordIndex, setEndWordIndex] = useState(100);
     var temp     
 
     useEffect(() => {
@@ -34,7 +36,7 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
         
     }, [numWords])
 
-    function generateWords(n) {
+    function generateWords() {
         return new Array(numWords).fill(null).map(() => generate())
     }
 
@@ -74,6 +76,12 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
 
     };
 
+    useEffect(() => {
+        if (currWord >= 7 && currWord % 7 === 0) {
+          setStartWordIndex((prevStartIndex) => prevStartIndex + 7);
+          setEndWordIndex((prevEndIndex) => prevEndIndex + 7);
+        }
+      }, [currWord]);
 
     function injectExtraWords(words, currIndex, currWord, currInput, char) {
         let space = document.createElement("span")
@@ -225,13 +233,14 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
         <div>
             <div className='typing--section'>
                 <div className="prompt">
-                    {words.map((word, i) => (<span key={i} id={`${i}`}>
+                    {words.slice(startWordIndex, endWordIndex).map((word, i) => (<span key={i} id={`${i}`}>
 
                         {word.split("").map((char, idx) => (
                             <>
                                 <span key={idx} id={`${i}-${idx}`} className="word-unrendered" onKeyDown={handleKeyDown}>{char}</span>
                                 {/* < Character class= */}
                             </>
+                            
 
                         ))}
                         <span> </span>

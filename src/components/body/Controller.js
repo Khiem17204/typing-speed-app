@@ -13,7 +13,6 @@ export default function Controller({ onModeChange }) {
       <div>Time</div>
       <div className='controller-mode'>
 
-
         <button className='controller-mode-button' onClick={() => handleModeChange('15s')} disabled={selectedMode === '15s'}>
           15
         </button>

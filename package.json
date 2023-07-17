@@ -17,6 +17,7 @@
     "react-firebase-hooks": "^5.1.1",
     "react-router-dom": "^6.14.0",
     "react-scripts": "5.0.1",
+    "reactjs-popup": "^2.0.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

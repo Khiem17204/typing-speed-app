@@ -8,7 +8,6 @@ import Login from "./components/Login"
 import Footer from "./components/Footer"
 import Result from "./components/Result"
 import User from "./components/User"
-
 import Loading from "./components/common/Loading"
 import ProtectedRoute from "./components/ProtectedRoute"
 function App() {    
@@ -24,7 +23,7 @@ function App() {
             <Route exact path='/user' element={<User/>}/>
           </Route>
         </Routes>
-        <Footer />
+        <Footer/>
       </BrowserRouter>
     );
   }

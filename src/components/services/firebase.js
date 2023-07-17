@@ -22,6 +22,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 // google auth signin
 const googleProvider = new GoogleAuthProvider();
+
 const signInWithGoogle = async () => {
     try {
         const date = new Date().toUTCString().slice(5, 16)

@@ -167,9 +167,7 @@ _(*) indicates an equivalent contribution to the project. Marked individuals mai
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* I, Trung, would like to thank [PedroTech](https://www.youtube.com/@PedroTechnologies), [Scrimba](https://scrimba.com/), and the ChartJS team for providing helpful references throughout the process.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

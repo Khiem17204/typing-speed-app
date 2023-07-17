@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import resultdata from '../resultdata'
 
 
-export default function Typing({ numWords,seconds,selectedMode,started,ended,mode}) {
+export default function Typing({ numWords, seconds, selectedMode, started, ended, mode }) {
     const navigate = useNavigate();
 
     const [words, setWords] = useState([])
@@ -13,18 +13,18 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
     const [char, setChar] = useState("")
     const [currWord, setCurrWord] = useState(0)
     const [currIndex, setCurrIndex] = useState(-1)
-    const [allTypeEntries,setallTypeEntries] = useState(0)
-    const [unCorrectedError,setUnCorrectedError] = useState(0)
+    const [allTypeEntries, setallTypeEntries] = useState(0)
+    const [unCorrectedError, setUnCorrectedError] = useState(0)
     const [correctChar, setCorrectChar] = useState(0)
     const [startWordIndex, setStartWordIndex] = useState(0);
     const [endWordIndex, setEndWordIndex] = useState(100);
-    var temp     
+    var temp
 
     useEffect(() => {
-        for (let i = 0; i<= currWord; i++){
-            for (let j = 0; j <= words[currWord]?.length; j++){
+        for (let i = 0; i <= currWord; i++) {
+            for (let j = 0; j <= words[currWord]?.length; j++) {
                 let element = document.getElementById(`${i}-${j}`)
-                if (element){
+                if (element) {
                     element.className = "word-unrendered"
                 }
             }
@@ -33,7 +33,7 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
         setCurrWord(0)
         setCurrIndex(-1)
         setChar("")
-        
+
     }, [numWords])
 
     function generateWords() {
@@ -78,10 +78,10 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
 
     useEffect(() => {
         if (currWord >= 7 && currWord % 7 === 0) {
-          setStartWordIndex((prevStartIndex) => prevStartIndex + 7);
-          setEndWordIndex((prevEndIndex) => prevEndIndex + 7);
+            setStartWordIndex((prevStartIndex) => prevStartIndex + 7);
+            setEndWordIndex((prevEndIndex) => prevEndIndex + 7);
         }
-      }, [currWord]);
+    }, [currWord]);
 
     function injectExtraWords(words, currIndex, currWord, currInput, char) {
         let space = document.createElement("span")
@@ -144,7 +144,7 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
     }, [currInput])
 
     useEffect(() => {
-        changeColor() 
+        changeColor()
     }, [currInput])
 
 
@@ -156,18 +156,14 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
         };
     }, []);
 
- 
+
     useEffect(() => {
         console.log('A key was pressed: ', currInput, char, words[currWord], currIndex);
     }, [currInput]);
 
 
     function checkMatch(char) {
-        if (currIndex >= words[currWord].length){
-            return "redundant"
-        }
-
-        if (currIndex >= words[currWord].length){
+        if (currIndex >= words[currWord].length) {
             return "redundant"
         }
         if (words[currWord][currIndex] === char) {
@@ -178,28 +174,28 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
             return "incorrect"
         }
     }
-    
+
     if (selectedMode === "15s") {
         temp = 15 - seconds;
-      } else if (selectedMode === "30s") {
+    } else if (selectedMode === "30s") {
         temp = 30 - seconds;
-      } else if (selectedMode === "45s") {
+    } else if (selectedMode === "45s") {
         temp = 45 - seconds;
-      } else{
+    } else {
         temp = seconds;
-      }
-      if (!(temp in resultdata.labels)) {
-            const wpm = (allTypeEntries/5)/(temp/60)
-            resultdata.labels.push(temp)
-            resultdata.wpm.push(wpm)
-      }
-      else if ((temp == 1 && temp < Math.max(...resultdata.labels))){
-        const wpm = (allTypeEntries/5)/(temp/60)
+    }
+    if (!(temp in resultdata.labels)) {
+        const wpm = (allTypeEntries / 5) / (temp / 60)
+        resultdata.labels.push(temp)
+        resultdata.wpm.push(wpm)
+    }
+    else if ((temp == 1 && temp < Math.max(...resultdata.labels))) {
+        const wpm = (allTypeEntries / 5) / (temp / 60)
         resultdata.labels = []
         resultdata.wpm = []
         resultdata.labels.push(temp)
         resultdata.wpm.push(wpm)
-      }
+    }
 
 
 
@@ -208,12 +204,12 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
             replace: true,
             state: {
                 allTypeEntries: allTypeEntries,
-                unCorrectedError:unCorrectedError,
+                unCorrectedError: unCorrectedError,
                 seconds: temp,
                 correctChar: correctChar,
                 type: `time ${selectedMode}`,
             }
-          });
+        });
     }
 
     if (currWord >= numWords) {
@@ -221,26 +217,45 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
             replace: true,
             state: {
                 allTypeEntries: allTypeEntries,
-                unCorrectedError:unCorrectedError,
+                unCorrectedError: unCorrectedError,
                 seconds: temp,
                 correctChar: correctChar,
                 type: mode === "word" ? `word ${selectedMode}` : `time ${selectedMode}`,
             }
-          });
+        });
     }
+
+    useEffect(() => {
+        let khiem = 0;
+        if (document.getElementById(`${currWord}-${currIndex}`)) {
+            if (document.getElementById(`${currWord}-${currIndex}`).getBoundingClientRect().top >= 360 && document.getElementById(`${numWords-1}`).getBoundingClientRect().top >450) {
+                for (let i = 0; i < currWord; i++) {
+                    if (document.getElementById(`${i}`).getBoundingClientRect().top <= 283) {
+                        khiem += 1
+                    }
+                }
+                for (let i = 0; i < khiem; i++) {
+                    if (document.getElementById(`${i}`).getBoundingClientRect().top <= 283) {
+                        document.getElementById(`${i}`).style.display = "none"
+                    }
+                }
+            }
+            console.log("height" + document.getElementById(`${currWord}-${currIndex}`).getBoundingClientRect().top)
+        }
+    }, [currInput])
 
     return (
         <div>
             <div className='typing--section'>
                 <div className="prompt">
-                    {words.slice(startWordIndex, endWordIndex).map((word, i) => (<span key={i} id={`${i}`}>
+                    {words.map((word, i) => (<span key={i} id={`${i}`}>
 
                         {word.split("").map((char, idx) => (
                             <>
                                 <span key={idx} id={`${i}-${idx}`} className="word-unrendered" onKeyDown={handleKeyDown}>{char}</span>
                                 {/* < Character class= */}
                             </>
-                            
+
 
                         ))}
                         <span> </span>
@@ -249,6 +264,9 @@ export default function Typing({ numWords,seconds,selectedMode,started,ended,mod
                     )
                     )}
                 </div>
+                <div className='typing-censor'>
+                </div>
+            
             </div>
         </ div>
     )

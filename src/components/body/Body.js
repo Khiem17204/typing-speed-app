@@ -121,11 +121,13 @@ export default function Body() {
     }, [selectedMode]);
 
     return (
+        
         <div className='main-content'>
             {!started && <Controller onModeChange={handleModeChange} />}
             {selectedMode.endsWith("w") ? <Countword word={currWord} totalWord={words} onKeyDown={handleKeyDown}/> : <Countdown time={seconds} onKeyDown={handleKeyDown} />}
             <Typing numWords={words} seconds={seconds} selectedMode={selectedMode} started={started} ended={ended} mode={selectedMode.endsWith("w") ? "word" : "time"} />
         </div>
+        
     );
 }
  

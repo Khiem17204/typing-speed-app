@@ -174,7 +174,7 @@ _(*) indicates an equivalent contribution to the project. Marked individuals mai
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-* I, Trung, would like to thank [PedroTech](https://www.youtube.com/@PedroTechnologies), [Scrimba](https://scrimba.com/), and the ChartJS team for providing helpful references throughout the process. Kudos to my team for the hard work 👏👏👏!
+* I, Trung, would like to thank [PedroTech](https://www.youtube.com/@PedroTechnologies), [Scrimba](https://scrimba.com/), the ChartJS team, and [alexandreanlim](https://github.com/alexandresanlim) for providing helpful references throughout the process.  Kudos to my team for the hard work 👏👏👏!
 * I, Huy, thank [FontAwesome](https://fontawesome.com/) for serving as a crucial part of our UI/UX development.
 
 
@@ -190,7 +190,7 @@ _(*) indicates an equivalent contribution to the project. Marked individuals mai
 [stars-url]: https://github.com/Khiem17204/typing-speed-app/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Khiem17204/typing-speed-app.svg?style=for-the-badge
 [issues-url]: https://github.com/Khiem17204/typing-speed-app/issues
-[license-shield]: https://img.shields.io/github/license/Khiem17204/typing-speed-app.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/dmtrung14/typing-speed-app.svg?style=for-the-badge
 [license-url]: https://github.com/Khiem17204/typing-speed-app/blob/main/LICENSE.txt
 [product-screenshot]: src/assets/Screen%20Shot%202023-07-17%20at%2011.55.40%20PM.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB

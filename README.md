@@ -176,6 +176,7 @@ _(*) indicates an equivalent contribution to the project. Marked individuals mai
 ## Acknowledgments
 * I, Trung, would like to thank [PedroTech](https://www.youtube.com/@PedroTechnologies), [Scrimba](https://scrimba.com/), the ChartJS team, and [alexandreanlim](https://github.com/alexandresanlim) for providing helpful references throughout the process.  Kudos to my team for the hard work 👏👏👏!
 * I, Huy, thank [FontAwesome](https://fontawesome.com/) for serving as a crucial part of our UI/UX development.
+* I, Khiem, thank mom and dad
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

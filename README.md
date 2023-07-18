@@ -4,7 +4,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+<img src="https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge" alt="Logo">
 
 <!-- PROJECT LOGO -->
 <br />
@@ -70,7 +70,7 @@ Welcome to our cutting-edge Typing Test Web! We are thrilled to present a fun an
 
 ### Built With
 
-![js][javascript] [![React][React.js]][React-url] ![nodejs][nodejs] ![firebase][firebase] ![html5][html5] ![tailwind][tailwind] ![CSS][CSS] ![chartjs][chartjs] ![bootstrap][bootstrap] ![github][github]
+![js][javascript] [![React][React.js]][React-url] ![nodejs][nodejs] ![firebase][firebase] ![html5][html5] ![tailwind][tailwind] ![CSS][CSS] ![chartjs][chartjs] ![bootstrap][bootstrap] ![github][github] 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -204,3 +204,4 @@ _(*) indicates an equivalent contribution to the project. Marked individuals mai
 [css]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [bootstrap]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [firebase]: https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=white
+[license]: https://img.shields.io/github/license/dmtrung14/typing-speed-app.svg?style=for-the-badge

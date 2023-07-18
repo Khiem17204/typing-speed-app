@@ -57,7 +57,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![image](https://github.com/dmtrung14/typing-speed-app/assets/60612625/33f8c690-6131-4219-86cb-c26688f6f063)
+![image](https://github.com/dmtrung14/typing-speed-app/assets/60612625/bbd6bfe9-d853-4e23-ba5f-96c7caa521aa)
+
 
 
 Welcome to our cutting-edge Typing Test Web! We are thrilled to present a fun and interactive platform that will put your typing skills to the ultimate test. Whether you're a seasoned typist looking to refine your speed and accuracy or a beginner aiming to improve, our website offers a wide range of engaging typing challenges for all levels. With a user-friendly interface and an extensive selection of texts, quotes, and passages, you can customize your typing experience to suit your preferences. Prepare to embark on a journey of self-improvement and enjoy the thrill of competing against yourself and others. Sharpen your fingers and get ready to type your way to success on our exciting typing test web!
@@ -105,9 +106,16 @@ npm
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-We provide users with 6 modes of typing, including 3 timed modes (15s, 30s, 45s), and 3 word count modes (25w, 50w, 100w). We also provide an interactive and real-time user statistic page, ready for customization.
-![image](https://github.com/dmtrung14/typing-speed-app/assets/60612625/b5c1dc26-96ac-4859-ade4-d958c2a81e74)
+We provide users with 6 modes of typing, including 3 timed modes (15s, 30s, 45s), and 3 word-count modes (25w, 50w, 100w). We used ChartJS to keep track of users typing performance and provide a detailed record after each attempt: 
 
+![image](https://github.com/dmtrung14/typing-speed-app/assets/60612625/3bbbc525-5db4-4da0-8ab1-17f6993fe620)
+<br/><br/><br/><br/>
+We also provide an interactive and real-time user statistic page, ready for customization. Users can now edit their bios, update their github, and twitter. We plan to allow users to share their public page in the future.
+
+<br/><br/><br/><br/>
+
+![image](https://github.com/dmtrung14/typing-speed-app/assets/60612625/b5c1dc26-96ac-4859-ade4-d958c2a81e74)
+&nbsp;&nbsp;&nbsp;
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,8 +123,9 @@ We provide users with 6 modes of typing, including 3 timed modes (15s, 30s, 45s)
 
 <!-- ROADMAP -->
 ## Roadmap
-
-- [ ] Add customizable design 
+- [x] First Functional TypingRace Release
+- [x] Customizable Userpage
+- [ ] Add customizable templates
 - [ ] Add Racing Mode
 - [ ] Multi-language Support
     - [ ] Vietnamese

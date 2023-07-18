@@ -18,11 +18,11 @@
   <p align="center">
     Get Ready to Test Your Typing Skills with an Exciting Web Challenge!    <br />
     <br />
-    <a href="https://github.com/Khiem17204/typing-speed-app/tree/main">View Demo</a>
+    <a href="https://typing-speed-app-192d3.web.app/" target="_blank">View Demo</a>
     ·
-    <a href="https://github.com/Khiem17204/typing-speed-app/issues">Report Bug</a>
+    <a href="https://github.com/Khiem17204/typing-speed-app/issues" target="_blank">Report Bug</a>
     ·
-    <a href="https://github.com/Khiem17204/typing-speed-app/issues">Request Feature</a>
+    <a href="https://github.com/Khiem17204/typing-speed-app/issues"  target="_blank">Request Feature</a>
   </p>
 </div>
 

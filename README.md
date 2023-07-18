@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Khiem17204/typing-speed-app/tree/main">
-    <img src="src/assets/favicon.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/dmtrung14/typing-speed-app/assets/60612625/32a445e7-4e13-4939-8545-ed434eb6fb70" alt="Logo">
   </a>
 
   <h3 align="center">Typing Race</h3>
@@ -25,8 +25,6 @@
     <a href="https://github.com/Khiem17204/typing-speed-app/issues">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>

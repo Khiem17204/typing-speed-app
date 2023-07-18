@@ -4,7 +4,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+<img src="https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge" alt="Logo">
 
 <!-- PROJECT LOGO -->
 <br />
@@ -18,11 +18,11 @@
   <p align="center">
     Get Ready to Test Your Typing Skills with an Exciting Web Challenge!    <br />
     <br />
-    <a href="https://github.com/Khiem17204/typing-speed-app/tree/main">View Demo</a>
+    <a href="https://typing-speed-app-192d3.web.app/" target="_blank">View Demo</a>
     ·
-    <a href="https://github.com/Khiem17204/typing-speed-app/issues">Report Bug</a>
+    <a href="https://github.com/Khiem17204/typing-speed-app/issues" target="_blank">Report Bug</a>
     ·
-    <a href="https://github.com/Khiem17204/typing-speed-app/issues">Request Feature</a>
+    <a href="https://github.com/Khiem17204/typing-speed-app/issues"  target="_blank">Request Feature</a>
   </p>
 </div>
 
@@ -57,7 +57,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![image](https://github.com/dmtrung14/typing-speed-app/assets/60612625/33f8c690-6131-4219-86cb-c26688f6f063)
+![image](https://github.com/dmtrung14/typing-speed-app/assets/60612625/bbd6bfe9-d853-4e23-ba5f-96c7caa521aa)
+
 
 
 Welcome to our cutting-edge Typing Test Web! We are thrilled to present a fun and interactive platform that will put your typing skills to the ultimate test. Whether you're a seasoned typist looking to refine your speed and accuracy or a beginner aiming to improve, our website offers a wide range of engaging typing challenges for all levels. With a user-friendly interface and an extensive selection of texts, quotes, and passages, you can customize your typing experience to suit your preferences. Prepare to embark on a journey of self-improvement and enjoy the thrill of competing against yourself and others. Sharpen your fingers and get ready to type your way to success on our exciting typing test web!
@@ -69,7 +70,7 @@ Welcome to our cutting-edge Typing Test Web! We are thrilled to present a fun an
 
 ### Built With
 
-![js][javascript] [![React][React.js]][React-url] ![nodejs][nodejs] ![firebase][firebase] ![html5][html5] ![tailwind][tailwind] ![CSS][CSS] ![chartjs][chartjs] ![bootstrap][bootstrap] ![github][github]
+![js][javascript] [![React][React.js]][React-url] ![nodejs][nodejs] ![firebase][firebase] ![html5][html5] ![tailwind][tailwind] ![CSS][CSS] ![chartjs][chartjs] ![bootstrap][bootstrap] ![github][github] 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,9 +106,16 @@ npm
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-We provide users with 6 modes of typing, including 3 timed modes (15s, 30s, 45s), and 3 word count modes (25w, 50w, 100w). We also provide an interactive and real-time user statistic page, ready for customization.
-![image](https://github.com/dmtrung14/typing-speed-app/assets/60612625/b5c1dc26-96ac-4859-ade4-d958c2a81e74)
+We provide users with 6 modes of typing, including 3 timed modes (15s, 30s, 45s), and 3 word-count modes (25w, 50w, 100w). We used ChartJS to keep track of users typing performance and provide a detailed record after each attempt: 
 
+![image](https://github.com/dmtrung14/typing-speed-app/assets/60612625/3bbbc525-5db4-4da0-8ab1-17f6993fe620)
+<br/><br/><br/><br/>
+We also provide an interactive and real-time user statistic page, ready for customization. Users can now edit their bios, update their github, and twitter. We plan to allow users to share their public page in the future.
+
+<br/><br/><br/><br/>
+
+![image](https://github.com/dmtrung14/typing-speed-app/assets/60612625/b5c1dc26-96ac-4859-ade4-d958c2a81e74)
+&nbsp;&nbsp;&nbsp;
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,8 +123,9 @@ We provide users with 6 modes of typing, including 3 timed modes (15s, 30s, 45s)
 
 <!-- ROADMAP -->
 ## Roadmap
-
-- [ ] Add customizable design 
+- [x] First Functional TypingRace Release
+- [x] Customizable Userpage
+- [ ] Add customizable templates
 - [ ] Add Racing Mode
 - [ ] Multi-language Support
     - [ ] Vietnamese
@@ -157,7 +166,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Our Team
 
-Khiem Le*, Trung Dang*, Huy Cao, and Tung Nguyen are sophomores at the University of Massachusetts Amherst. They have been working on TypingRace from June 2023 to July 2023. The project is maintained on Khiem's public repository and is open for public contributions. Interested individuals can reach out to Khiem at ktle@umass.edu, to Trung at trungdangminh14012004@gmail.com, to Huy at [], and to Tung at [].
+Khiem Le*, Trung Dang*, Huy Cao, and Tung Nguyen are sophomores at the University of Massachusetts Amherst. They have been working on TypingRace from June 2023 to July 2023. The project is maintained on Khiem's public repository and is open for public contributions. Interested individuals can reach out to Khiem at ktle@umass.edu, to Trung at trungdangminh14012004@gmail.com, to Huy at caogiahuy615@gmail.com, and to Tung at tung051024@gmail.com.
 
 _(*) indicates an equivalent contribution to the project. Marked individuals maintain the right to first author the project_
 
@@ -165,8 +174,10 @@ _(*) indicates an equivalent contribution to the project. Marked individuals mai
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
+* I, Trung, would like to thank [PedroTech](https://www.youtube.com/@PedroTechnologies), [Scrimba](https://scrimba.com/), the ChartJS team, and [alexandreanlim](https://github.com/alexandresanlim) for providing helpful references throughout the process.  Kudos to my team for the hard work 👏👏👏!
+* I, Huy, thank [FontAwesome](https://fontawesome.com/) for serving as a crucial part of our UI/UX development.
+* I, Khiem, thank mom and dad
 
-* I, Trung, would like to thank [PedroTech](https://www.youtube.com/@PedroTechnologies), [Scrimba](https://scrimba.com/), and the ChartJS team for providing helpful references throughout the process.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -180,7 +191,7 @@ _(*) indicates an equivalent contribution to the project. Marked individuals mai
 [stars-url]: https://github.com/Khiem17204/typing-speed-app/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Khiem17204/typing-speed-app.svg?style=for-the-badge
 [issues-url]: https://github.com/Khiem17204/typing-speed-app/issues
-[license-shield]: https://img.shields.io/github/license/Khiem17204/typing-speed-app.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/dmtrung14/typing-speed-app.svg?style=for-the-badge
 [license-url]: https://github.com/Khiem17204/typing-speed-app/blob/main/LICENSE.txt
 [product-screenshot]: src/assets/Screen%20Shot%202023-07-17%20at%2011.55.40%20PM.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
@@ -194,3 +205,4 @@ _(*) indicates an equivalent contribution to the project. Marked individuals mai
 [css]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [bootstrap]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [firebase]: https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=white
+[license]: https://img.shields.io/github/license/dmtrung14/typing-speed-app.svg?style=for-the-badge

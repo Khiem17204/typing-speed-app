@@ -23,7 +23,7 @@ ChartJS.register(
     CategoryScale,
     LinearScale,
     PointElement,
-)  
+)
 
 export default function User() {
     const [user, loading, error] = useAuthState(auth);
@@ -44,7 +44,7 @@ export default function User() {
             console.log(error)
         }
     }, [loading,user,error,navigate])
-    const [userData, setUserData] = useState([])    
+    const [userData, setUserData] = useState([])
     const fetchData = async () => {
         const q = query(collection(db, "users"), where("uid", "==", user?.uid))
         await getDocs(q)
@@ -52,15 +52,15 @@ export default function User() {
                 const newData = snapshot.docs[0].data();
                 setUserData(newData);
                 console.log(userData);
-                
+
             })
     }
     useEffect(()=> {
         fetchData()
     }, [user])
-    
+
     var hash = "142857" + user?.uid + "eebe560242" + user?.uid+"ac120002";  // 15+ hex chars
-    var data = new Identicon(hash).toString() 
+    var data = new Identicon(hash).toString()
     const database1 = userData["best-wpm time 15s"]
     var dataset = null
     var options = null
@@ -78,17 +78,17 @@ export default function User() {
             },
             {
                 data: userData["best-wpm time 30s"],
-                backgroundColor: "#FF7A90",
-                borderColor: '#FF7A90',
-                pointBorderColor: '#FF7A90',
+                backgroundColor: "#557D8D70",
+                borderColor: '#557D8D70',
+                pointBorderColor: '#557D8D70',
                 pointRadius:2,
                 borderWidth: 1.5,
             },
             {
                 data: userData["best-wpm time 45s"],
-                backgroundColor: "#ff7a9050",
-                borderColor: '#ff7a9050',
-                pointBorderColor: '#ff7a9050',
+                backgroundColor: "##557D8D40",
+                borderColor: '##557D8D40',
+                pointBorderColor: '#557D8D40',
                 pointRadius:2,
                 borderWidth: 1.5,
             },
@@ -102,17 +102,17 @@ export default function User() {
             },
             {
                 data: userData["best-wpm word 50w"],
-                backgroundColor: "#FF7A90",
-                borderColor: '#FF7A90',
-                pointBorderColor: '#FF7A90',
+                backgroundColor: "#FF7A9070",
+                borderColor: '#FF7A9070',
+                pointBorderColor: '#FF7A9070',
                 pointRadius:2,
                 borderWidth: 1.5,
             },
             {
                 data: userData["best-wpm word 100w"],
-                backgroundColor: "#FF7A90",
-                borderColor: '#FF7A90',
-                pointBorderColor: '#FF7A90',
+                backgroundColor: "#FF7A9040",
+                borderColor: '#FF7A9040',
+                pointBorderColor: '#FF7A9040',
                 pointRadius:2,
                 borderWidth: 1.5,
             }
@@ -129,11 +129,11 @@ export default function User() {
                 legend: {
                     display: true,
                     position: "top",
-                },                
+                },
                 labels: {
                     color: 'rgb(255, 99, 132)'
                 }
-            },            
+            },
             hover: {
                 mode: 'nearest',
                 intersect: true
@@ -146,7 +146,7 @@ export default function User() {
                     max: 130,
                     min: 0
                 }
-            
+
             },
             elements: {
                 line: {
@@ -155,8 +155,8 @@ export default function User() {
             }
         }
     }
-    
-     
+
+
 
     return (
         <div className='user'>
@@ -214,11 +214,11 @@ export default function User() {
                                     <h5 style={{fontSize:13, margin:"10px"}}>30 seconds</h5>
                                     <h3 style={{fontFamily:"Roboto, sans-serif", fontSize:45, margin:"10px"}}>{userData["time 30s"] ? Math.max(...userData["time 30s"]) : "-"}</h3>
                                     <h3 style={{fontFamily:"Roboto, sans-serif", fontSize:20, margin:"10px", color:"#bcc0d2"}}>{userData["time 15s"] ? Math.max(...userData["time 15s"]) + "%" : "-"}</h3>
-                                    
+
                                 </li><li>
                                     <h5 style={{fontSize:13, margin:"10px"}}>45 seconds</h5>
                                     <h3 style={{fontFamily:"Roboto, sans-serif", fontSize:45, margin:"10px"}}>{userData["time 45s"] ? Math.max(...userData["time 45s"]) : "-"}</h3>
-                                    <h3 style={{fontFamily:"Roboto, sans-serif", fontSize:20, margin:"10px", color:"#bcc0d2"}}>{userData["time 15s"] ? Math.max(...userData["time 15s"]) + "%" : "-"}</h3>                          
+                                    <h3 style={{fontFamily:"Roboto, sans-serif", fontSize:20, margin:"10px", color:"#bcc0d2"}}>{userData["time 15s"] ? Math.max(...userData["time 15s"]) + "%" : "-"}</h3>
                                 </li>
                             </ul>
                         </div>
@@ -243,13 +243,13 @@ export default function User() {
                 </div>
                 <div className="user-best-chart">
                 <div style={{textAlign:"center", color:"#444444"}}>personal best for all modes</div>
-                {userData != null ? <Line  
+                {userData != null ? <Line
                         data = {dataset}
                         options = {options}
                     ></Line> : " "}
                 </div>
             </div>
-            
+
     </div>
     )
 }

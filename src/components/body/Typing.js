@@ -228,20 +228,19 @@ export default function Typing({ numWords, seconds, selectedMode, started, ended
     useEffect(() => {
         let khiem = 0;
         if (document.getElementById(`${currWord}-${currIndex}`)) {
-            if (document.getElementById(`${currWord}-${currIndex}`).getBoundingClientRect().top >= 360 && document.getElementById(`${numWords-1}`).getBoundingClientRect().top >450) {
+            if (document.getElementById(`${currWord}-${currIndex}`).getBoundingClientRect().top >= 311 && document.getElementById( `${numWords-1}`).getBoundingClientRect().top >= 273) {
                 for (let i = 0; i < currWord; i++) {
-                    if (document.getElementById(`${i}`).getBoundingClientRect().top <= 283) {
+                    if (document.getElementById(`${i}`).getBoundingClientRect().top <= 233) {
                         khiem += 1
                     }
                 }
                 for (let i = 0; i < khiem; i++) {
-                    if (document.getElementById(`${i}`).getBoundingClientRect().top <= 283) {
+                    if (document.getElementById(`${i}`).getBoundingClientRect().top <= 233) {
                         document.getElementById(`${i}`).style.display = "none"
                     }
                 }
             }
-            console.log("height" + document.getElementById(`${currWord}-${currIndex}`).getBoundingClientRect().top)
-        }
+            console.log("height" + document.getElementById(`${currWord}-${currIndex}`).getBoundingClientRect().top)        }
     }, [currInput])
 
     return (
@@ -266,7 +265,7 @@ export default function Typing({ numWords, seconds, selectedMode, started, ended
                 </div>
                 <div className='typing-censor'>
                 </div>
-            
+
             </div>
         </ div>
     )
